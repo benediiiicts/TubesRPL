@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pembobotan.css">
     <title>Portal TA</title>
-
+    
 </head>
 <body>
 
@@ -26,10 +26,13 @@
                 <option>Penguji</option>
                 <option>Pembimbing</option>
             </select>
+            <!-- Persentase Role -->
             <div class="filtered-content">
                 <div class="bobot-keseluruhan">
                     <div class="title-bobot">Bobot keseluruhan</div>
-                    <div class="value-bobot">35%</div>
+                    <div class="value-bobot">
+                        <span id = "value-bobot-berubah">35</span>%
+                    </div>
                 </div>
                 <div class="update-value">
                     <label for="value-text">enter new value</label>
@@ -79,6 +82,7 @@
             </div>
         </div>
     </div>
-
+    
+    <script src="pembobotan.js"></script>
 </body>
 </html>
