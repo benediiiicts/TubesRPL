@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pembobotan.css">
+    <script src="pembobotan.js" defer></script>
     <title>Portal TA</title>
-
 </head>
 <body>
 
@@ -79,6 +79,22 @@
             </div>
         </div>
     </div>
-
+    <div id="popUp-container">
+        <div class="form-container-popUp">
+            <div class="header-popUp">
+                <span class="close-button-popUp">&times;</span>
+                <h1>Tambah pembobotan</h1>
+            </div>
+            <form action="#" method="POST">
+                <label for="nama-bobot">Nama bobot</label>
+                <input type="text" id="nama-bobot" name="nama-bobot" placeholder="NPM DOSEN" required>
+                <label for="bobot">Bobot ( % )</label>
+                <input type="number" id="bobot" name="bobot" placeholder="0 - 100" min="0" max="100" required>
+            </form>
+            <div class="submit-btn-popUp">
+                <button type="submit">Add new</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
