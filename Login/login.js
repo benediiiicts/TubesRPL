@@ -5,7 +5,7 @@ function checkLogin(){
 
     const tempPassword = "Admin123";
     if (password === tempPassword){
-        window.location.href = "../Home/home.html";
+        window.location.href = "../MainPage/Koordinator/home.html";
     } else{
         alert("Password Anda Salah.");
     }
