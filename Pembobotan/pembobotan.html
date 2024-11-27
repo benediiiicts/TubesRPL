@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="pembobotan.css">
     <title>Portal TA</title>
 
 </head>
@@ -17,44 +17,65 @@
         </div>
         <!-- <div class="profile">J</div> -->
     </div>
-
+    <button class="back-button">back</button>
     <div class="content">
-        <h2>TA Overview</h2>
-        <div class="filter-container">
-            <select>
-                <option>Semester</option>
+        <h1 class="page-header">Pembobotan</h1>
+        <section class="filter-container">
+            <select class="category">
+                <option>Koordinator</option>
+                <option>Penguji</option>
+                <option>Pembimbing</option>
             </select>
-            <input type="text" placeholder="Search">
-            <select>
-                <option>Semester</option>
-            </select>
-            <button>Add New</button>
-        </div>
-
-        <div class="card-grid">
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
+            <div class="filtered-content">
+                <div class="bobot-keseluruhan">
+                    <div class="title-bobot">Bobot keseluruhan</div>
+                    <div class="value-bobot">35%</div>
+                </div>
+                <div class="update-value">
+                    <label for="value-text">enter new value</label>
+                    <input type="text" id="value-text" placeholder="Value">
+                </div>
+                <div class="update-btn">
+                    <button class="update-button">Update</button>
+                </div>
+                <div class="reset-value">
+                    <button class="delete-button">Delete</button>
+                </div>
             </div>
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
+        </section>
+        <div class="component-grid">
+            <div class="components">
+                <label for="component-container">Komponen Nilai</label>
+                <div id="component-container">
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
-            </div>
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
-            </div>
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
-            </div>
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
+            <div>
+                <button class="add-button">Add new</button>
             </div>
         </div>
     </div>

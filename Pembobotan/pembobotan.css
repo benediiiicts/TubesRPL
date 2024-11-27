@@ -11,8 +11,6 @@ body {
     align-items: center;
     justify-content: last baseline;
 }
-
-
 .navbar h1 {
     font-size: 25px;
     margin: 0;
@@ -44,21 +42,76 @@ body {
 }
 
 .content {
+    margin-left: 15%;
     padding: 20px;
+    padding-top: 0;
 }
 
 .content h2 {
     font-size: 18px;
-    margin-bottom: 20px;
 }
-
+.page-header{
+    padding: 20px;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    margin-left: 7%;
+}
 .filter-container {
-    display: flex;
-    justify-content: start;
+    display: grid;
+    grid-template-areas: 
+        'option'
+        'result';
+    grid-template-columns: 150px;
     align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 0%;
+    margin-left: 7%;
+}
+.category{
+    grid-area: option;
     margin-bottom: 20px;
 }
-
+.filtered-content{
+    grid-area: result;
+    display: grid;
+    grid-template-areas: 
+        'bobot upd-val upd-button delete';
+}
+.bobot-keseluruhan{
+    grid-area: bobot;
+    display: grid;
+    grid-template-areas: 'title value';
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    width: 200px;
+    height: 65px;
+}
+.title-bobot{
+    grid-area: title;
+    font-size: large;
+    margin: 10px;
+}
+.value-bobot{
+    grid-area: value;
+    font-size: xx-large;
+    margin: 10px;
+}
+.update-value{
+    grid-area: upd-val;
+    margin: 10px;
+}
+.update-btn{
+    grid-area: upd-button;
+    margin: 5px;
+    margin-top: 25px;
+}
+.reset-value{
+    grid-area: delete;
+    margin: 5px;
+    margin-top: 25px;
+}
 .filter-container select,
 .filter-container input[type="text"],
 .filter-container button {
@@ -77,24 +130,75 @@ body {
 .filter-container button:hover {
     background-color: #555;
 }
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding-inline: 10%;
-}
-
-.card {
-    background-color: #ccc;
+.back-button {
+    background-color: #D9D9D9;
     border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-    height: 200px;
-}
-
-.card span {
-    display: block;
-    font-size: 14px;
+    font-size: large;
+    border: none;
+    padding: 10px;
+    margin-left: 20px;
     margin-top: 10px;
+    width: 70px;
+    cursor: pointer;
+}
+.component-grid{
+    display: grid;
+    grid-template-areas: 'comps button';
+    padding: 20px;
+    margin-bottom: 2%;
+    margin-left: 7%;
+    padding-top: 0%;
+}
+#component-container{
+    grid-area: comps;
+    border: 1px solid;
+    margin-right: 5%;
+}
+.components label{
+    font-size: x-large;
+}
+.components{
+    width: 100%;
+}
+.component{
+    padding: 10px;
+    display: grid;
+    grid-template-areas: 
+        'title value button';
+    grid-template-columns: auto 96px 96px;
+    height: 60px;
+}
+.comp-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: title;
+    background-color: #D9D9D9;
+}
+.comp-bobot{
+    display: flex;
+    grid-area: value;
+    color: white;
+    background-color: #989898;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+.comp-delete{
+    margin-left: 10px;
+    grid-area: button;
+    font-size: x-large;
+    border: 0px;
+    background-color: #D9D9D9;
+}
+.add-button{
+    display: button;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 25px;
 }
