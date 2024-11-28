@@ -153,6 +153,7 @@ body {
     grid-area: comps;
     border: 1px solid;
     margin-right: 5%;
+    border-radius: 5px;
 }
 .components label{
     font-size: x-large;
@@ -209,3 +210,83 @@ body {
     margin-top: 25px;
 }
 
+.close-button-popUp{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    font-size: x-large;
+    margin-left: 10px;
+    color: white;
+    
+}
+#popUp-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.form-container-popUp {
+    display: grid;
+    grid-template-areas: 
+        'head'
+        'form'
+        'button';
+    width: 400px;
+    background-color: #cfcfcf;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.header-popUp{
+    grid-area: head;
+    background-color: #333;
+    margin-bottom: 10%;
+    padding: 0%;
+    border-radius: 8px;
+}
+.form-container-popUp h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+}
+.form-container-popUp form {
+    grid-area: form;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-container-popUp label {
+    margin-left: 10%;
+    align-self: flex-start;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-container-popUp input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-container-popUp .submit-btn-popUp{
+    grid-area: button;
+    margin-bottom: 10px;
+}
+.form-container-popUp button {
+    width: 30%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.form-container-popUp button:hover {
+    background-color: #ddd;
+}
