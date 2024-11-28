@@ -55,7 +55,7 @@
                         <div class="comp-bobot">15%</div>
                         <button class="comp-delete">delete</button>
                     </div>
-                    <div class="component">
+                    <!-- <div class="component">
                         <div class="comp-title">TATA TULIS LAPORAN</div>
                         <div class="comp-bobot">15%</div>
                         <button class="comp-delete">delete</button>
@@ -74,15 +74,23 @@
                         <div class="comp-title">TATA TULIS LAPORAN</div>
                         <div class="comp-bobot">15%</div>
                         <button class="comp-delete">delete</button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div>
-                <button class="add-button">Add new</button>
+                <button class="add-button" id="add-new">Add new</button>
             </div>
         </div>
     </div>
-    
+
+    <div id="popup-overlay"></div>
+    <div id="popup">
+        <h3>Add New Component</h3>
+        <input type="text" id="new-title" placeholder="Title" />
+        <input type="number" id="new-percentage" placeholder="Percentage" />
+        <button id="submit-new">Submit</button>
+    </div>
+
     <script src="pembobotan.js"></script>
 </body>
 </html>
