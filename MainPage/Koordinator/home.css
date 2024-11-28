@@ -30,6 +30,10 @@ body {
     font-size: 14px;
 }
 
+.navbar .nav-links a:hover {
+    color: #ffffff;
+}
+
 .navbar .profile {
     background-color: green;
     color: white;
