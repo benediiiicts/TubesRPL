@@ -7,126 +7,188 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="set-up-ta">
-        <div class="rectangle-10">
+    <div class="navbar">
+        <h1>Portal TA</h1>
+        <div class="nav-links">
+            <a href="#">Overview</a>
+            <a href="../../Pembobotan/pembobotan.html">Pembobotan</a>
         </div>
-        <div class="group-1444">
-            <div class="rectangle-14">
-            </div>
-            <div class="add-new"> Add new </div>
-            <div class="group-1447">
-                <div class="group-1444">
-                    <div class="rectangle-14">
-                    </div>
-                    <div class="log-out"> Log out </div>
+        <!-- <div class="profile">J</div> -->
+    </div>
+    <button class="back-button">back</button>
+    <div class="content">
+        <h1 class="page-header">TA Overview / Set Up TA</h1>
+        <div class="set-up-ta">
+            <div class="TA-form">
+                <div class="component" id="title-TA">
+                    <label for="title">Judul</label><br>
+                    <input type="text" name="title" id="title" placeholder="Judul Skripsi">
+                </div>
+                <div class="component" id="date">
+                    <label for="date-ta">Tanggal</label><br>
+                    <input type="date" name="date-ta" id="date-ta">
+                </div>
+                <div class="component" id="time">
+                    <label for="time-ta">Waktu</label><br>
+                    <input type="time" name="time-ta" id="time-ta">
+                </div>
+                <div class="component" id="mahasiswa">
+                    <label for="mahasiswa-ta">Mahasiswa</label><br>
+                    <select name="mahasiswa-ta" id="mahasiswa-ta">
+                        <option value="Default">--Pilih Mahasiswa--</option>
+                        <option value="M1">Mahasiswa 1</option>
+                    </select>
+                    <!-- <input type="text" name="mahasiswa-ta" id="mahasiswa-ta"> -->
+                </div>
+                <div class="component" id="tempat">
+                    <label for="tempat"></label>Tempat<br>
+                    <input type="text" name="tempat" id="tempat">
+                </div>
+                <div class="component" id="keterangan">
+                    <label for="topik-ta">Topik TA</label><br>
+                    <select name="topik-ta" id="topik-ta">
+                        <option value="Default">--Pilih Topik--</option>
+                        <option value="T1">Topik 1</option>
+                        <option value="T2">Topik 2</option>
+                    </select>
+                </div>
+                <div class="component" id="jenis">
+                    <label for="jenis-ta">Jenis TA</label><br>
+                    <input type="text" name="jenis-ta" id="jenis-ta">
+                </div>
+                <div class="component">
+                    <button class="add-button" id="add-new">Create TA</button>
                 </div>
             </div>
-        </div>
-        <div class="ellipse-42">
-        </div>
-        <div class="portal-ta"> PORTAL TA </div>
-        <div class="overview"> Overview </div>
-        <div class="pembobotan"> Pembobotan </div>
-        <div class="ta-overview-set-up-ta"> TA Overview / Set Up TA </div>
-        <div class="keterangan-field">
-            <div class="label"> Keterangan </div>
-            <div class="input">
-                <div class="value"> Topik TA </div>
-            </div>
-        </div>
-        <div class="tempat-field">
-            <div class="label"> Tempat </div>
-            <div class="input">
-                <div class="value"> Lokasi Pelaksanaan TA </div>
-            </div>
-        </div>
-        <div class="judul-field">
-            <div class="label"> Judul </div>
-            <div class="input">
-                <div class="value"> Judul Skripsi Mahasiswa </div>
-            </div>
-        </div>
-        <div class="judul-field2">
-            <div class="label"> Mahasiswa </div>
-            <div class="input">
-                <div class="value"> NPM Mahasiswa </div>
-            </div>
-        </div>
-        <div class="date-field">
-            <div class="datepicker">
-                <div class="datepicker2">
-                    <div class="label2">
-                        <div class="label3"> Tanggal </div>
-                    </div>
-                    <div class="field-content">
-                        <svg class="icon-field-calendar" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g clip-path="url(#clip0_2010_845)">
-                                <path d="M8.2 9.6C7.97333 9.6 7.78347 9.5232 7.6304 9.3696C7.4768 9.21653 7.4 9.02667 7.4 8.8C7.4 8.57333 7.4768 8.3832 7.6304 8.2296C7.78347 8.07653 7.97333 8 8.2 8C8.42667 8 8.6168 8.07653 8.7704 8.2296C8.92347 8.3832 9 8.57333 9 8.8C9 9.02667 8.92347 9.21653 8.7704 9.3696C8.6168 9.5232 8.42667 9.6 8.2 9.6ZM5 9.6C4.77333 9.6 4.5832 9.5232 4.4296 9.3696C4.27653 9.21653 4.2 9.02667 4.2 8.8C4.2 8.57333 4.27653 8.3832 4.4296 8.2296C4.5832 8.07653 4.77333 8 5 8C5.22667 8 5.4168 8.07653 5.5704 8.2296C5.72347 8.3832 5.8 8.57333 5.8 8.8C5.8 9.02667 5.72347 9.21653 5.5704 9.3696C5.4168 9.5232 5.22667 9.6 5 9.6ZM11.4 9.6C11.1733 9.6 10.9835 9.5232 10.8304 9.3696C10.6768 9.21653 10.6 9.02667 10.6 8.8C10.6 8.57333 10.6768 8.3832 10.8304 8.2296C10.9835 8.07653 11.1733 8 11.4 8C11.6267 8 11.8165 8.07653 11.9696 8.2296C12.1232 8.3832 12.2 8.57333 12.2 8.8C12.2 9.02667 12.1232 9.21653 11.9696 9.3696C11.8165 9.5232 11.6267 9.6 11.4 9.6ZM8.2 12.8C7.97333 12.8 7.78347 12.7232 7.6304 12.5696C7.4768 12.4165 7.4 12.2267 7.4 12C7.4 11.7733 7.4768 11.5835 7.6304 11.4304C7.78347 11.2768 7.97333 11.2 8.2 11.2C8.42667 11.2 8.6168 11.2768 8.7704 11.4304C8.92347 11.5835 9 11.7733 9 12C9 12.2267 8.92347 12.4165 8.7704 12.5696C8.6168 12.7232 8.42667 12.8 8.2 12.8ZM5 12.8C4.77333 12.8 4.5832 12.7232 4.4296 12.5696C4.27653 12.4165 4.2 12.2267 4.2 12C4.2 11.7733 4.27653 11.5835 4.4296 11.4304C4.5832 11.2768 4.77333 11.2 5 11.2C5.22667 11.2 5.4168 11.2768 5.5704 11.4304C5.72347 11.5835 5.8 11.7733 5.8 12C5.8 12.2267 5.72347 12.4165 5.5704 12.5696C5.4168 12.7232 5.22667 12.8 5 12.8ZM11.4 12.8C11.1733 12.8 10.9835 12.7232 10.8304 12.5696C10.6768 12.4165 10.6 12.2267 10.6 12C10.6 11.7733 10.6768 11.5835 10.8304 11.4304C10.9835 11.2768 11.1733 11.2 11.4 11.2C11.6267 11.2 11.8165 11.2768 11.9696 11.4304C12.1232 11.5835 12.2 11.7733 12.2 12C12.2 12.2267 12.1232 12.4165 11.9696 12.5696C11.8165 12.7232 11.6267 12.8 11.4 12.8ZM2.6 16C2.16 16 1.7832 15.8435 1.4696 15.5304C1.15653 15.2168 1 14.84 1 14.4V3.2C1 2.76 1.15653 2.38347 1.4696 2.0704C1.7832 1.7568 2.16 1.6 2.6 1.6H3.4V0H5V1.6H11.4V0H13V1.6H13.8C14.24 1.6 14.6168 1.7568 14.9304 2.0704C15.2435 2.38347 15.4 2.76 15.4 3.2V14.4C15.4 14.84 15.2435 15.2168 14.9304 15.5304C14.6168 15.8435 14.24 16 13.8 16H2.6ZM2.6 14.4H13.8V6.4H2.6V14.4Z" fill="#AAAAAA" />
-                            </g>
-                            <defs>
-                                <clipPath id="clip0_2010_845">
-                                    <rect width="16" height="16" fill="white" />
-                                </clipPath>
-                            </defs>
-                        </svg>
-                        <div class="choose-date"> Pilh Tanggal </div>
+            <div class="staff-container">
+                <div class="staff-list">
+                    <label for="staffs">Staff</label>
+                    <div id="staffs">
+                        <div class="staff-component">
+                            <div class="nama-staff">Staff-1</div>
+                            <div class="role-staff"> Role-1</div>
+                            <button class="comp-delete">delete</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="container-light">
-                <div class="title">
-                    <div class="title">
-                        <div class="single"> Waktu </div>
+                <div class="add-btn">
+                    <button class="add-button" id="add-new">Add new</button>
+                </div>
+                    <!-- <label for="title-ta">Judul</label>
+                    <input type="text" id="title-ta" name="judul-ta" placeholder="Judul Skripsi" required> -->
+                    <!-- <div class="label"> Judul </div>
+                    <div class="input">
+                        <div class="value"> Judul Skripsi Mahasiswa </div>
                     </div>
                 </div>
-                <div class="title-textfield">
-                    <div class="textfield">
-                        <div class="button">
-                            <div class="text">
-                                <div class="pilih-waktu"> Pilih Waktu </div>
+                <div class="date-field">
+                    <div class="datepicker">
+                        <div class="datepicker2">
+                            <div class="label2">
+                                <div class="label3"> Tanggal </div>
                             </div>
-                            <div class="icon-ic-re-clock">
-                                <svg class="icon-stroke-1-px-final" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.51271 2.28555C7.51271 2.01927 7.29685 1.8034 7.03057 1.8034C6.76429 1.8034 6.54842 2.01927 6.54842 2.28555H7.51271ZM7.03057 7.4362H6.54842C6.54842 7.59378 6.62543 7.74141 6.75465 7.83159L7.03057 7.4362ZM10.3391 10.3329C10.5574 10.4853 10.858 10.4318 11.0104 10.2134C11.1628 9.99504 11.1093 9.69449 10.8909 9.54211L10.3391 10.3329ZM13.3354 6.99982C13.3354 10.4991 10.4986 13.3359 6.99933 13.3359V14.3001C11.0312 14.3001 14.2997 11.0317 14.2997 6.99982H13.3354ZM6.99933 13.3359C3.50004 13.3359 0.663295 10.4991 0.663295 6.99982H-0.300991C-0.300991 11.0317 2.96748 14.3001 6.99933 14.3001V13.3359ZM0.663295 6.99982C0.663295 3.50052 3.50004 0.663784 6.99933 0.663784V-0.300502C2.96748 -0.300502 -0.300991 2.96796 -0.300991 6.99982H0.663295ZM6.99933 0.663784C10.4986 0.663784 13.3354 3.50052 13.3354 6.99982H14.2997C14.2997 2.96796 11.0312 -0.300502 6.99933 -0.300502V0.663784ZM6.54842 2.28555V7.4362H7.51271V2.28555H6.54842ZM6.75465 7.83159L10.3391 10.3329L10.8909 9.54211L7.30648 7.04081L6.75465 7.83159Z" fill="#4B72D2" />
+                            <div class="field-content">
+                                <svg class="icon-field-calendar" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g clip-path="url(#clip0_2010_845)">
+                                        <path d="M8.2 9.6C7.97333 9.6 7.78347 9.5232 7.6304 9.3696C7.4768 9.21653 7.4 9.02667 7.4 8.8C7.4 8.57333 7.4768 8.3832 7.6304 8.2296C7.78347 8.07653 7.97333 8 8.2 8C8.42667 8 8.6168 8.07653 8.7704 8.2296C8.92347 8.3832 9 8.57333 9 8.8C9 9.02667 8.92347 9.21653 8.7704 9.3696C8.6168 9.5232 8.42667 9.6 8.2 9.6ZM5 9.6C4.77333 9.6 4.5832 9.5232 4.4296 9.3696C4.27653 9.21653 4.2 9.02667 4.2 8.8C4.2 8.57333 4.27653 8.3832 4.4296 8.2296C4.5832 8.07653 4.77333 8 5 8C5.22667 8 5.4168 8.07653 5.5704 8.2296C5.72347 8.3832 5.8 8.57333 5.8 8.8C5.8 9.02667 5.72347 9.21653 5.5704 9.3696C5.4168 9.5232 5.22667 9.6 5 9.6ZM11.4 9.6C11.1733 9.6 10.9835 9.5232 10.8304 9.3696C10.6768 9.21653 10.6 9.02667 10.6 8.8C10.6 8.57333 10.6768 8.3832 10.8304 8.2296C10.9835 8.07653 11.1733 8 11.4 8C11.6267 8 11.8165 8.07653 11.9696 8.2296C12.1232 8.3832 12.2 8.57333 12.2 8.8C12.2 9.02667 12.1232 9.21653 11.9696 9.3696C11.8165 9.5232 11.6267 9.6 11.4 9.6ZM8.2 12.8C7.97333 12.8 7.78347 12.7232 7.6304 12.5696C7.4768 12.4165 7.4 12.2267 7.4 12C7.4 11.7733 7.4768 11.5835 7.6304 11.4304C7.78347 11.2768 7.97333 11.2 8.2 11.2C8.42667 11.2 8.6168 11.2768 8.7704 11.4304C8.92347 11.5835 9 11.7733 9 12C9 12.2267 8.92347 12.4165 8.7704 12.5696C8.6168 12.7232 8.42667 12.8 8.2 12.8ZM5 12.8C4.77333 12.8 4.5832 12.7232 4.4296 12.5696C4.27653 12.4165 4.2 12.2267 4.2 12C4.2 11.7733 4.27653 11.5835 4.4296 11.4304C4.5832 11.2768 4.77333 11.2 5 11.2C5.22667 11.2 5.4168 11.2768 5.5704 11.4304C5.72347 11.5835 5.8 11.7733 5.8 12C5.8 12.2267 5.72347 12.4165 5.5704 12.5696C5.4168 12.7232 5.22667 12.8 5 12.8ZM11.4 12.8C11.1733 12.8 10.9835 12.7232 10.8304 12.5696C10.6768 12.4165 10.6 12.2267 10.6 12C10.6 11.7733 10.6768 11.5835 10.8304 11.4304C10.9835 11.2768 11.1733 11.2 11.4 11.2C11.6267 11.2 11.8165 11.2768 11.9696 11.4304C12.1232 11.5835 12.2 11.7733 12.2 12C12.2 12.2267 12.1232 12.4165 11.9696 12.5696C11.8165 12.7232 11.6267 12.8 11.4 12.8ZM2.6 16C2.16 16 1.7832 15.8435 1.4696 15.5304C1.15653 15.2168 1 14.84 1 14.4V3.2C1 2.76 1.15653 2.38347 1.4696 2.0704C1.7832 1.7568 2.16 1.6 2.6 1.6H3.4V0H5V1.6H11.4V0H13V1.6H13.8C14.24 1.6 14.6168 1.7568 14.9304 2.0704C15.2435 2.38347 15.4 2.76 15.4 3.2V14.4C15.4 14.84 15.2435 15.2168 14.9304 15.5304C14.6168 15.8435 14.24 16 13.8 16H2.6ZM2.6 14.4H13.8V6.4H2.6V14.4Z" fill="#AAAAAA" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_2010_845">
+                                            <rect width="16" height="16" fill="white" />
+                                        </clipPath>
+                                    </defs>
                                 </svg>
+                                <div class="choose-date"> Pilh Tanggal </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-light">
+                        <div class="title">
+                            <div class="title">
+                                <div class="single"> Waktu </div>
+                            </div>
+                        </div>
+                        <div class="title-textfield">
+                            <div class="textfield">
+                                <div class="button">
+                                    <div class="text">
+                                        <div class="pilih-waktu"> Pilih Waktu </div>
+                                    </div>
+                                    <div class="icon-ic-re-clock">
+                                        <svg class="icon-stroke-1-px-final" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M7.51271 2.28555C7.51271 2.01927 7.29685 1.8034 7.03057 1.8034C6.76429 1.8034 6.54842 2.01927 6.54842 2.28555H7.51271ZM7.03057 7.4362H6.54842C6.54842 7.59378 6.62543 7.74141 6.75465 7.83159L7.03057 7.4362ZM10.3391 10.3329C10.5574 10.4853 10.858 10.4318 11.0104 10.2134C11.1628 9.99504 11.1093 9.69449 10.8909 9.54211L10.3391 10.3329ZM13.3354 6.99982C13.3354 10.4991 10.4986 13.3359 6.99933 13.3359V14.3001C11.0312 14.3001 14.2997 11.0317 14.2997 6.99982H13.3354ZM6.99933 13.3359C3.50004 13.3359 0.663295 10.4991 0.663295 6.99982H-0.300991C-0.300991 11.0317 2.96748 14.3001 6.99933 14.3001V13.3359ZM0.663295 6.99982C0.663295 3.50052 3.50004 0.663784 6.99933 0.663784V-0.300502C2.96748 -0.300502 -0.300991 2.96796 -0.300991 6.99982H0.663295ZM6.99933 0.663784C10.4986 0.663784 13.3354 3.50052 13.3354 6.99982H14.2997C14.2997 2.96796 11.0312 -0.300502 6.99933 -0.300502V0.663784ZM6.54842 2.28555V7.4362H7.51271V2.28555H6.54842ZM6.75465 7.83159L10.3391 10.3329L10.8909 9.54211L7.30648 7.04081L6.75465 7.83159Z" fill="#4B72D2" />
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="rectangle-27">
-        </div>
-        <div class="group-14442">
-            <div class="rectangle-142">
-            </div>
-            <div class="add-new2"> Add new </div>
-        </div>
-        <div class="staff"> staff : </div>
-        <div class="rectangle-28">
-        </div>
-        <div class="gede-karya"> GEDE KARYA </div>
-        <div class="role-pembimbing"> Role : Pembimbing </div>
-        <div class="rectangle-282">
-        </div>
-        <div class="gede-karya2"> GEDE KARYA </div>
-        <div class="role-pembimbing2"> Role : Pembimbing </div>
-        <div class="group-14482">
-            <div class="rectangle-283">
-            </div>
-            <div class="gede-karya3"> GEDE KARYA </div>
-            <div class="role-pembimbing3"> Role : Pembimbing </div>
-            <div class="group-14483">
-                <div class="rectangle-284">
+                <div class="student-field">
+                    <div class="label"> Mahasiswa </div>
+                    <div class="input">
+                        <div class="value"> NPM Mahasiswa </div>
+                    </div>
                 </div>
-                <div class="gede-karya4"> GEDE KARYA </div>
-                <div class="role-pembimbing4"> Role : Pembimbing </div>
+                <div class="tempat-field">
+                    <div class="label"> Tempat </div>
+                    <div class="input">
+                        <div class="value"> Lokasi Pelaksanaan TA </div>
+                    </div>
+                </div>
+                <div class="keterangan-field">
+                    <div class="label"> Keterangan </div>
+                    <div class="input">
+                        <div class="value"> Topik TA </div>
+                    </div>
+                </div>
+                <div class="jenis-TA">
+                    <label for="select-TA"></label>
+                    <select id="select-TA">
+                        <option value="TA1">Tugas Akhir 1</option>
+                        <option value="TA1">Tugas Akhir 2</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="group-1444">
-            <div class="rectangle-143">
+            <div class="staff-grid">
+                <label for="staff-list">Staff:</label>
+                <div class="staff-list">
+    
+                </div>
+            </div> -->
+            <!-- <div class="rectangle-27">
             </div>
-            <div class="add-new3"> Add new </div>
+            <div class="group-14442">
+                <div class="rectangle-142">
+                </div>
+                <div class="add-new2"> Add new </div>
+            </div>
+            <div class="staff"> staff : </div>
+            <div class="rectangle-28">
+            </div>
+            <div class="gede-karya"> GEDE KARYA </div>
+            <div class="role-pembimbing"> Role : Pembimbing </div>
+            <div class="rectangle-282">
+            </div>
+            <div class="gede-karya2"> GEDE KARYA </div>
+            <div class="role-pembimbing2"> Role : Pembimbing </div>
+            <div class="group-14482">
+                <div class="rectangle-283">
+                </div>
+                <div class="gede-karya3"> GEDE KARYA </div>
+                <div class="role-pembimbing3"> Role : Pembimbing </div>
+                <div class="group-14483">
+                    <div class="rectangle-284">
+                    </div>
+                    <div class="gede-karya4"> GEDE KARYA </div>
+                    <div class="role-pembimbing4"> Role : Pembimbing </div>
+                </div>
+            </div>
+            <div class="group-1444">
+                <div class="rectangle-143">
+                </div>
+                <div class="add-new3"> Add new </div>
+            </div> -->
         </div>
     </div>
 </body>
