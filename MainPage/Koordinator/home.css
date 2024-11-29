@@ -9,7 +9,7 @@ body {
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    justify-content: last baseline;
+    justify-content: space-between;
 }
 
 
@@ -45,6 +45,18 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+}
+
+.logout-button {
+    background-color: white;
+    border-radius: 5px;
+    font-size: medium;
+    border: none;
+    padding: 5px;
+    margin-left: auto;
+    margin-top: 2px;
+    width: 140px;
+    cursor: pointer;
 }
 
 .content {
