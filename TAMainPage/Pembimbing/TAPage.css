@@ -42,59 +42,210 @@ body {
     align-items: center;
     border-radius: 50%;
 }
+/* 
+.button-back{
+    background-color:#ddd ;
+    padding: 3px;
 
-.content {
+} */
+
+.container {
+    width: auto;
+    height: auto;
+    /* margin: 20px auto; */
+    background: #fff;
     padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    /* display: flex; */
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center; /* Agar tombol sejajar secara vertikal */
 }
 
-.content h2 {
+.back-button {
+    background-color: #ccc;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* .header {
+    margin: 20px ;
+} */
+
+.header h2 {
+    margin: 0;
+    font-size: 30px;
+    text-align: center;
+}
+
+.header p {
+    text-align: center;
     font-size: 18px;
-    margin-bottom: 20px;
+    color: rgb(0, 0, 0);
+    margin: 5px 0;
 }
 
-.filter-container {
+.details {
+    margin: 50px 80px 0px 78px;
+}
+
+.details h3 {
+    margin-left: 19px;
+}
+
+.details p {
+    margin: 10px 0;
+    margin: 20px;
+    font-size: 18px;
     display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 20px;
+    justify-content: space-between;
 }
 
-.filter-container select,
-.filter-container input[type="text"],
-.filter-container button {
+.details p span {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    width: 60%;
+    text-align: left;
+}
+
+.penilaian{
+    margin: 0px 100px 50px 100px;
+    border: 1px solid #555;
+    
+}
+
+/* .penilaian h3 {
+    margin: 20px 0 15px;
+    font-size: 16px;
+} */
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    /* border: 1px solid #e0e0e0; */
+    padding: 15px;
+    /* border-radius: 8px; */
+    /* background-color: #f9f9f9; */
+    /* margin: 20px; */
+}
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 5px;
+    background-color: #dcdcdc;
+    /* border-radius: 5px; */
+    font-size: 14px;
+}
+
+.label {
+    font-weight: bold;
+    color: #555;
     padding: 10px;
+}
+
+.percentage {
+    color: rgb(0, 0, 0);
+    background-color: #5a5a5a;
+    width: 20%;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 8px;
     font-size: 14px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    /* border-radius: 5px; */
+    margin: 0 10px;
 }
 
-.filter-container button {
-    background-color: #333;
+.save-button {
+    width: 20%;
+    background-color: #555;
     color: white;
+    border: none;
+    padding: 12px 12px;
+    /* border-radius: 5px; */
     cursor: pointer;
 }
 
-.filter-container button:hover {
-    background-color: #555;
+.save-button:hover {
+    background-color: #3a3a3a;
 }
 
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding-inline: 10%;
-}
-
-.card {
+.done-button {
+    /* margin-top: 20px;
     background-color: #ccc;
-    border-radius: 5px;
-    padding: 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    */
+    width: 20px;
+    display: flex;
+    justify-content: center;
     text-align: center;
-    height: 200px;
+    align-items: center;
+    font-size: 14px;
+    float: right;
+    padding: 0px 100px 15px 100px;
 }
 
-.card span {
-    display: block;
+.done-button:hover {
+    background-color: #bbb;
+    
+}
+.catatan {
+    margin-top: 20px;
+    padding: 15px;
+    /* background-color: #f9f9f9; */
+    /* border: 1px solid #ddd; */
+    border-radius: 8px;
+}
+
+.catatan h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+fieldset {
+    /* border: 1px solid #ccc; */
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0px 90px 50px 90px;
+    /* background-color: #fff; */
+}
+
+legend {
     font-size: 14px;
+    font-weight: bold;
+    color: #555;
+    padding: 0 5px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 8px;
+    font-size: 14px;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
     margin-top: 10px;
+    box-sizing: border-box;
+    resize: vertical; /* Agar tinggi dapat diubah */
 }
