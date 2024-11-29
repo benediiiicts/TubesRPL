@@ -44,57 +44,165 @@ body {
 }
 
 .content {
+    /* max-width: 600px; */
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    /* border-radius: 8px; */
     padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
-.content h2 {
-    font-size: 18px;
-    margin-bottom: 20px;
+.container{
+    margin: 0px 100px 50px 100px;
 }
-
-.filter-container {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.filter-container select,
-.filter-container input[type="text"],
-.filter-container button {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.filter-container button {
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-}
-
-.filter-container button:hover {
-    background-color: #555;
-}
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding-inline: 10%;
-}
-
-.card {
+.back-button {
     background-color: #ccc;
+    border: none;
+    padding: 10px 15px;
     border-radius: 5px;
-    padding: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+h1, h2 {
     text-align: center;
+    margin-bottom: 10px;
+}
+h1 {
+    font-size: 24px;
+}
+h2 {
+    font-size: 48px;
+    color: #000000;
+}
+.date {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+table td {
+    height: 50px;
+}
+#field-besar{
+    height: 150px;
+}
+.notes {
+    margin-top: 20px;
+    margin-right: 10px;
+    /* margin: 0px 100px 50px 100px; */
+}
+.notes label {
+    font-weight: bold;
+}
+.notes textarea {
+    width: 100%;
+    height: 60px;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+}
+#highlight-darker{
+    background-color: #dfdfdf;
+}
+textarea {
     height: 200px;
 }
 
-.card span {
-    display: block;
+/* BAP Updload download */
+
+.bap-upload-unduh {
+    /* max-width: 400px; */
+    margin: 0px 100px 50px 100px;
+    /* margin: auto; */
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.status {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    margin-bottom: 15px;
     font-size: 14px;
-    margin-top: 10px;
+    text-align: center;
+}
+.file-item {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+.file-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #555;
+    margin-right: 10px;
+}
+.file-details {
+    flex-grow: 1;
+}
+.file-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+.file-info {
+    font-size: 12px;
+    color: #777;
+}
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.buttons button {
+    padding: 8px 16px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.upload-btn {
+    background-color: #e0e0e0;
+    color: #333;
+}
+.upload-btn:hover {
+    background-color: #d6d6d6;
+}
+.download-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+.download-btn:hover {
+    background-color: #45a049;
 }
