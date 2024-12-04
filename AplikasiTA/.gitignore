@@ -1,1 +1,17 @@
+# Jangan lacak file .env yang berisi data sensitif
 .env
+
+# Jangan lacak folder Python bytecode atau cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Jangan lacak file konfigurasi virtual environment
+venv/
+env/
+
+# Jangan lacak file log
+*.log
+
+# Jangan lacak database file SQLite
+*.sqlite
