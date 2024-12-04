@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+    position: relative;
+    
+}
+
+.navbar {
+    background-color: #ddd;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: last baseline;
+}
+
+
+.navbar h1 {
+    font-size: 25px;
+    margin: 0;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.navbar .nav-links a:hover {
+    color: #ffffff;
+}
+
+.navbar .profile {
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#backbutton{
+    
+    position: absolute;
+    width: 100px;
+    height : 45px;
+    /* border-style: solid; */
+    top:60px;
+    left:16px;
+    font-size: 36px;
+    
+    display: flex;
+    justify-content: center;
+    background-color: #ddd;
+    color: inherit;           /* Inherits the color from the parent or sets it to default */
+    text-decoration: none;
+          
+    z-index: 10;             
+    
+}
+
+
+
+#judulTA{
+    position: absolute;
+    top:20px;
+    /* left:518px; */
+    font-size: 40px;
+    /* background-color: black; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+#ketJudul{
+    position: absolute;
+    top:80px;
+    /* left:646px; */
+    font-size: 28px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#FotoDosenContainer{
+    position: absolute;
+    /* background-color: aqua; */
+    top:230px;
+    /* left:646px; */
+    font-size: 28px;
+    width: 100%;
+    height : 300px;
+
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    
+    
+}
+
+
+
+#titlePembimbing {
+    position: absolute; /* Allow precise positioning */
+    top: 190px; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the element's own dimensions */
+    font-size: 25px; /* Adjust font size as needed */
+    text-align: center; /* Ensure text aligns in the center if multiline */
+}
+#framefotodosen{
+    /* position: absolute; */
+    border-style: solid;
+    border-width: 2px;
+    height: 277px;
+    width : 70%;
+    display: flex; /* Enables Flexbox */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+
+}
+#innercontainer {
+    width: 80%; /* Adjust as needed */
+    height: 231px;
+    display: flex; /* Enables Flexbox for horizontal alignment */
+    /* border-style: solid; */
+    align-items: center; /* Centers the squares vertically */
+    overflow-x: auto; /* Allows horizontal scrolling */
+    overflow-y: hidden; /* Prevent vertical scroll */
+    gap : 10px;
+}
+
+.square {
+    width: 231px;
+    height: 231px;
+    background-color: #ddd;
+    border-radius: 4px;
+    /* border-style: solid; */
+    flex-shrink: 0; /* Prevent the square from shrinking */
+}
+
+/* Table container with absolute positioning */
+/* Table container with absolute positioning */
+#tableContainer {
+    position: absolute; /* Use absolute positioning */
+    top: 583px; /* Position it 583px from the top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to perfectly center horizontally */
+    width: 60%; /* Set the width of the container */
+    height: 200px; /* Set the height of the container */
+    background-color: #f0f0f0; /* Light background color */
+    border-radius: 8px; /* Optional rounded corners */
+    padding: 20px; /* Adds space inside the table */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    font-size: 24px; /* Set font size to 24px for the entire table */
+  }
+  
+  /* Styling for each row */
+  .row {
+    display: flex;
+    margin-bottom: 15px; /* Adds space between rows */
+  }
+  
+  /* Label styling */
+  .label {
+    width: 300px; /* Fixed width for labels */
+    font-weight: bold; /* Makes labels bold */
+    color: #333; /* Dark color for labels */
+  }
+  
+  /* Data cell styling */
+  .data {
+    flex: 1; /* Takes up the remaining space */
+    background-color: #dcdcdc; /* Gray background for data cells */
+    padding: 5px; /* Adds padding inside data cells */
+    border-radius: 4px; /* Rounded corners for data cells */
+    text-align: left; /* Aligns text to the left */
+  }
