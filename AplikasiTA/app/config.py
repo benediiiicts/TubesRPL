@@ -16,6 +16,7 @@ class Config:
     DB_HOST = os.environ.get('DB_HOST', 'localhost')
     DB_PORT = os.environ.get('DB_PORT', '5432')  # Default port for PostgreSQL
     DB_NAME = os.environ.get('DB_NAME', 'my_database')
+    # FLASK_APP = run.py
 
     # Construct the full database URL using these components
     SQLALCHEMY_DATABASE_URI = (
