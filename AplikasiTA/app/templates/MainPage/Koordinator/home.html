@@ -14,7 +14,7 @@
     <div class="navbar">
         <h1>Portal TA</h1>
         <div class="nav-links">
-            <a href="../../TAMainPage_sebelumTA/Koordinator/TApageOverview.html">Overview</a>
+            <a href="{{ url_for('koor.overview') }}">Overview</a>
             <a href="../../Pembobotan/pembobotan.html">Pembobotan</a>
         </div>
         <button class="logout-button" type="button" onclick="window.location.href='{{ url_for('auth.login') }}'">Log out</button>

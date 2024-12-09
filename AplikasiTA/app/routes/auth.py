@@ -12,11 +12,11 @@ def login():
         password = request.form['password']
         
         # Query user dari database
-        user = Users.query.filter_by(username='koordinantor01').first()
+        user = Users.query.filter_by(username=username).first()
         
           # query ke database menggunakan sqlalchemy
         
-        # cek jika user ada dan password sesuai
+        # cek jika user ada dan password sesuai 
         # if user and check_password_hash(user.password, password):  # cek password
         if user and password == user.password :  # cek password
             return redirect(url_for('auth.login_success'))  # Redirect jika berhasil login
