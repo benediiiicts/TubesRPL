@@ -22,12 +22,18 @@ def login():
             return redirect(url_for('auth.login_success'))  # Redirect jika berhasil login
         else:
             return render_template('Login/login.html', error=user.password) 
+        # nanti implementasi pemilihan role disini
+        # tergantung role nanti ke redirect kemana
+        # gw buatnya setiap actor punya prefix url sendiri dan punya route sendiri manggilnya {{ url_for('[nama blueprint].[nama route di /...]') }}
     
     return render_template('Login/login.html', error=None)
 
 @auth_blueprint.route('/login_success') 
 def login_success():
-    render_template('successLogin.html')
+    return render_template('successLogin.html')
+    
+@auth_blueprint.route('/redirecting')
+def redirecting():
     time.sleep(1)
     return redirect(url_for('koor.home'))
 

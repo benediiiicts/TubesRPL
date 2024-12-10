@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login Success</title>
+    <script>
+        // Redirect after 1 second (1000 milliseconds)
+        setTimeout(function() {
+            window.location.href = "{{ url_for('auth.redirecting') }}";  // Redirect to the redirecting route
+        }, 1000);
+    </script>
 </head>
 <body>
-    <p>Login Success</p>
+    <h1>Login Success</h1>
+    <p>You will be redirected shortly...</p>
 </body>
 </html>
