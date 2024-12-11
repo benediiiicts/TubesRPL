@@ -8,48 +8,64 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="navbarcontainer">
-        <div class="leftgroup">
-            <p id="judul">UMK APP</p>
-            <p class="judulkecil">UMK</p>
-            <p class="judulkecil">Products</p>
-            <p class="judulkecil">Request</p>
+    <div class="navbar">
+        <h1>Portal TA</h1>
+        <div class="nav-links">
+            <a href="../../MainPage/Mahasiswa/homever2.html">Overview</a>
         </div>
-        <div class="rightgroup">
-            <div id="logout">
-                Logout
-            </div>
-        </div>
-        
+        <button class="logout-button" onclick="window.location.href='../../Login/login.html';">Log out</button>
+        <!-- <div class="profile">J</div> -->
     </div>
+
+    
     <div id="bodycontainer">
-        <div id="subjudul"> UMK Overview</div>
+        <div id="subjudul"> TA Overview</div>
         <div class="utilitycontainer">
+            
+
             <select id="sort" name="sort">
-                <option value="option1">sort 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+                <option>24/25 Ganjil</option>
+                <option>23/24 Genap</option>
+                <option>23/24 Ganjil</option>
+                <option>22/23 Genap</option>
+                <option>22/23 Ganjil</option>
             </select>
             <input type="text" class="search-bar" placeholder="Search...">
             <button class="search-button">Search</button>
+            
+            
+
             <select id="filter" name="filter">
-                <option value="option1">filter 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
+                <option>Semua</option>
+                <option>Aktif</option>
+                <option>Tidak Aktif</option>
             </select>
         </div>
-        <div class="UMKboxcontainer">
-            <div class="UMKbox">
-                <div class="UMKboxPicture"></div>
-                <div class="UMKboxDescription">
-                    <p class="judulUMK">Judul UMK</p>
-                    <p class="deskripsiUMK">Deskripsi</p>
-                </div>
+        <div class="Sidangboxcontainer">
+            <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
+                <div class="Sidangbox">
                 
-            </div>
+                    <div class="SidangboxPicture"></div>
+                    <div class="SidangboxDescription">
+                        <div class = "subjudulcontainer">
+                            <p class="judulSidang">SIDANG TA : deskripsi</p>
+                            <p class="deskripsiSidang">TA 1 /2</p>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </a>
+            
+
+            
+
+            
+
 
                 
-            </div>
+        </div>
+        
             
             
         </div>
