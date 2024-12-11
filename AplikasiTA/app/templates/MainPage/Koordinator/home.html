@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
+    <!-- <link rel="stylesheet" href="./home.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <script rel="text/javascript" src="{{ url_for('static', filename='js/home.css') }}"></script>
     <title>Portal TA</title>
 
 </head>
@@ -12,11 +14,12 @@
     <div class="navbar">
         <h1>Portal TA</h1>
         <div class="nav-links">
-            <a href="../../TAMainPage_sebelumTA/Koordinator/TApageOverview.html">Overview</a>
+            <a href="{{ url_for('koor.overview') }}">Overview</a>
             <a href="../../Pembobotan/pembobotan.html">Pembobotan</a>
         </div>
-        <button class="logout-button" onclick="window.location.href='../../Login/login.html';">Log out</button>
-        <!-- <div class="profile">J</div> -->
+        <!-- <a class="logout-button" href="{{ url_for('auth.login') }}">Log out</a> -->
+        <button class="logout-button" type="button" onclick="window.location.href='{{ url_for('auth.login') }}'">Log out</button>
+    <!-- <div class="profile">J</div> -->
     </div>
 
     <div class="content">
