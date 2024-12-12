@@ -1,0 +1,279 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+.navbar {
+    background-color: #ddd;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: last baseline;
+}
+.navbar h1 {
+    font-size: 25px;
+    margin: 0;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.navbar .profile {
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.content {
+    margin-left: 15%;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.content h2 {
+    font-size: 18px;
+}
+.page-header{
+    padding: 20px;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    margin-left: 7%;
+}
+.filter-container {
+    display: grid;
+    grid-template-areas: 
+        'option'
+        'result';
+    grid-template-columns: 150px;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 0%;
+    margin-left: 7%;
+}
+.category{
+    grid-area: option;
+    margin-bottom: 20px;
+}
+.filtered-content{
+    grid-area: result;
+    display: grid;
+    grid-template-areas: 
+        'bobot1 bobot2 bobot3 upd-val upd-button delete';
+}
+#bobot-koordinator{
+    grid-area: bobot1;
+}
+#bobot-pembimbing{
+    grid-area: bobot2;
+}
+#bobot-penguji{
+    grid-area: bobot3;
+}
+.bobot-dosen{
+    display: grid;
+    grid-template-areas: 'title value';
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    width: 200px;
+    height: 65px;
+    margin: 5px;
+}
+.title-bobot{
+    grid-area: title;
+    font-size: large;
+    margin: 10px;
+    width: 80px;
+}
+.value-bobot{
+    grid-area: value;
+    display: grid;
+    grid-template-areas: 
+        'value pers';
+    grid-template-columns: auto 30px;
+    font-size: large;
+    margin: 10px;
+    margin-left: 0%;
+    margin-right: 0%;
+    justify-content: center;
+    align-items: center;
+}
+.bobot-value{
+    display: flex;
+    grid-area: value;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height:30px;
+    font-size: larger;
+}
+.persen{
+    grid-area: pers;
+}
+.update-value{
+    grid-area: upd-val;
+    margin: 10px;
+}
+.update-btn{
+    grid-area: upd-button;
+    margin: 5px;
+    margin-top: 25px;
+}
+.reset-value{
+    grid-area: delete;
+    margin: 5px;
+    margin-top: 25px;
+}
+.filter-container select,
+.filter-container input[type="text"],
+.filter-container button {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.filter-container button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.filter-container button:hover {
+    background-color: #555;
+}
+.back-button {
+    background-color: #D9D9D9;
+    border-radius: 5px;
+    font-size: large;
+    border: none;
+    padding: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    width: 70px;
+    cursor: pointer;
+}
+.component-grid{
+    display: grid;
+    grid-template-areas: 'comps button';
+    padding: 20px;
+    margin-bottom: 2%;
+    margin-left: 7%;
+    padding-top: 0%;
+}
+#component-container{
+    grid-area: comps;
+    border: 1px solid;
+}
+.components label{
+    font-size: x-large;
+}
+.components{
+    width: 100%;
+}
+.component{
+    padding: 10px;
+    display: grid;
+    grid-template-areas:
+        'title value button';
+    grid-template-columns: auto 96px 96px;
+    height: 60px;
+}
+.comp-title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: title;
+    background-color: #D9D9D9;
+}
+.comp-bobot{
+    display: flex;
+    grid-area: value;
+    color: white;
+    background-color: #989898;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+}
+.comp-delete{
+    margin-left: 10px;
+    grid-area: button;
+    font-size: x-large;
+    border: 0px;
+    background-color: #D9D9D9;
+}
+.comp-delete:hover{
+    background-color: #CCC;
+}
+.add-button{
+    display: button;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: none;
+    border-radius: 4px;
+    z-index: 10;
+}
+#popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 9;
+}
+#popup input {
+    display: block;
+    width: 90%;
+    margin: 10px 0;
+    padding: 8px;
+    font-size: 14px;
+}
+#popup button {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+#popup button:hover {
+    background-color: #218838;
+}
