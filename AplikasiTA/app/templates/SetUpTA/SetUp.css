@@ -72,33 +72,7 @@ body {
     width: 70px;
     cursor: pointer;
 }
-.staff-component{
-    margin: 10px;
-    display: grid;
-    grid-template-areas: 'name role button';
-}
-.nama-staff{
-    grid-area: name;
-    display: flex;
-    background-color: #D9D9D9;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-}
-.role-staff{
-    display: flex;
-    grid-area: role;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: #989898;
-}
-.comp-delete{
-    grid-area: button;
-    border: none;
-    margin-left: 10px;
-    background-color: #D9D9D9;
-}
+
 .TA-form{
     margin-top: 30px;
     grid-area: form;
@@ -148,11 +122,7 @@ body {
 #jenis{
     grid-area: type;
 }
-.staff-container{
-    width: 550px;
-    margin-top: 30px;
-    grid-area: list;
-}
+
 #staffs{
     border: 1px solid;
     border-radius: 5px;
@@ -167,4 +137,35 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+.staffcontainer{
+    border-style: solid;
+    width: 50%;
+    height: 90%;
+}
+
+.staffcontainer-header{
+    border-style: solid;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    
+}
+
+.staffcontainer-header p{
+   font-size: 30px; 
+}
+
+.staffcontainer-body{
+    box-sizing: border-box;
+    border-style: solid;
+    width: 100%;
+    height: 90%;
 }
