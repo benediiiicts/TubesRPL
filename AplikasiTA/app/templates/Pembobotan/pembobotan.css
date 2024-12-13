@@ -180,6 +180,7 @@ body {
     padding-top: 0%;
 }
 #component-container{
+    
     grid-area: comps;
     border: 1px solid;
 }
@@ -187,6 +188,7 @@ body {
     font-size: x-large;
 }
 .components{
+    margin
     width: 100%;
 }
 .component{
