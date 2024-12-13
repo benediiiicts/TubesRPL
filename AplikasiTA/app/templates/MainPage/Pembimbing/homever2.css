@@ -1,0 +1,204 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    margin:0;
+}
+.navbar {
+    background-color: #ddd;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar h1 {
+    font-size: 25px;
+    margin: 0;
+}
+
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    padding-left: 20px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+
+.navbar .nav-links a:hover {
+    color: #ffffff;
+}
+
+.navbar .profile {
+    background-color: green;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.logout-button {
+    background-color: white;
+    border-radius: 5px;
+    font-size: medium;
+    border: none;
+    padding: 5px;
+    margin-left: auto;
+    margin-top: 2px;
+    width: 140px;
+    cursor: pointer;
+}
+
+
+#bodycontainer{
+    /* background-color: black; */
+    width: 100%;
+    /* height: 1024px; */
+    /* display: flex;
+    align-items: center; */
+    /* justify-content: center; */
+    /* padding: 100px; */
+    padding-top: 50px;
+    padding-left: 240px;
+    /* margin-right: 290px; */
+    /* padding-bottom: 30px; */
+    
+}
+
+#subjudul{
+    display: flex;
+    align-items: start;
+    font-size: 30px;
+}
+
+.utilitycontainer {
+    display: flex;
+     /* Center the search bar */
+    align-items: center;
+    margin-top: 20px; /* Add some space from the top */
+}
+
+.search-bar {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px; /* Set a width for the search bar */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #575757;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-button:hover {
+    background-color: #dedede;
+    color:black;
+    border: solid 1px;
+}
+
+#sort{
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#filter{
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+.Sidangboxcontainer{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-top: 20px;
+    /* background-color: black; */
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto new lines */
+    justify-content: flex-start; /* Align items to the start of the container */
+    align-items: flex-start; /* Align items to the top */
+    gap: 10px; /* Space between items */
+    /* border: 2px solid black;  */
+    padding: 10px;
+    padding-left: 0%;
+    padding-right: 0%;
+    min-height: 100px; /* Minimum height to show content */
+    position: absolute;
+    
+
+    
+    
+}
+.Sidangbox{
+    width: 320px;
+    height: 253px;
+    /* border:solid; */
+    
+    
+    
+}
+.SidangboxDescription{
+    width: 100%;
+    height: 80%;
+    /* border: solid 1px; */
+    background-color:#D9D9D9;
+    margin: 0px;
+}
+
+.SidangboxPicture{
+    width: 100%;
+    height: 20%;
+    /* border: solid 1px; */
+    background-color: #575757;
+    margin: 0px;
+    display: flow-root;
+    overflow: hidden;
+}
+
+.judulSidang{
+    margin : 0px;
+    
+    margin-left: 10px;
+    font-size: 22px;
+}
+.deskripsiSidang{
+    margin : 0px;
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.subjudulcontainer{
+    /* border: solid; */
+    position: relative;
+    top: 10px;
+}
+
+.Sidangboxlink{
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make it behave like a block element */
+}
