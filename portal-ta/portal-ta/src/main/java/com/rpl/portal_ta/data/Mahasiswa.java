@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Mahasiswa {
+public class Mahasiswa{
     
     @Size(min = 10, max = 10)
     private String npm;
