@@ -17,20 +17,24 @@ public class LoginRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    //cek akun dosen/ mahasiswa
-    public String getUser(String email){
-        String sql = "SELECT * FROM Dosen WHERE email = ?";
-        List<Dosen> dosenList = jdbcTemplate.query(sql, this::mapRowToDosen, email);
-        List<Mahasiswa> mahasiswaList;
-        if(dosenList.isEmpty()){
-            mahasiswaList = jdbcTemplate.query(sql, this::mapRowToMahasiswa, email);
-            if(mahasiswaList.isEmpty()){
-                return null;
-            }
-            return "mahasiswa";
+    public Object findUser(String email) {
+        // Query for 'Dosen'
+        String sqlDosen = "SELECT * FROM Dosen WHERE email = ?";
+        List<Dosen> dosenList = jdbcTemplate.query(sqlDosen, this::mapRowToDosen, email);
+    
+        // Query for 'Mahasiswa'
+        String sqlMahasiswa = "SELECT * FROM Mahasiswa WHERE email = ?";
+        List<Mahasiswa> mahasiswaList = jdbcTemplate.query(sqlMahasiswa, this::mapRowToMahasiswa, email);
+    
+        if (!dosenList.isEmpty()) {
+            return dosenList.get(0);  // mengembnalikan dosen pertama yang ditemukan
+        } else if (!mahasiswaList.isEmpty()) {
+            return mahasiswaList.get(0);  // mengembnalikan mahasiswa pertama yang ditemukan
+        } else {
+            return null;  // email user tidak ditemukan di database
         }
-        return "dosen";
     }
+
     private Dosen mapRowToDosen(ResultSet resultSet, int rowNum) throws SQLException {
         return new Dosen(
             resultSet.getString("nik"), 
