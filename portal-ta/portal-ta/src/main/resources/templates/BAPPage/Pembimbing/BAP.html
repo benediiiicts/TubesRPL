@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="BAP.css">
+    <link rel="stylesheet" href="/portal-ta/portal-ta/src/main/resources/static/css/BAPPage/Koordinator/BAP.css">
     <title>Portal TA</title>
-
+    <script rel="text/javascript" src="/portal-ta/portal-ta/src/main/resources/static/js/BAP/BAP.js"></script>
+    <script src="BAP.js" defer></script>
+</head>
 </head>
 <body>
 
@@ -15,47 +17,72 @@
             <a href="#">Overview</a>
             <a href="#">Pembobotan</a>
         </div>
-        <!-- <div class="profile">J</div> -->
     </div>
 
     <div class="content">
-        <h2>TA Overview</h2>
-        <div class="filter-container">
-            <select>
-                <option>Semester</option>
-            </select>
-            <input type="text" placeholder="Search">
-            <select>
-                <option>Semester</option>
-            </select>
-            <button>Add New</button>
+        <button class="back-button" onclick="window.location.href='../../MainPage/Koordinator/home.html';">back</button>
+        <div class="container">
+            <h1>JUDUL TA DISINI</h1>
+            <h2>76.6</h2>
+            <div class="date">Telah dilaksanakan pada : <br><span id="highlight-darker"> Monday, 26 Agustus 2024 18:00</span></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Pembimbing/Penguji</th>
+                        <th>Nilai</th>
+                        <th>Bobot</th>
+                        <th>Nilai Akhir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr id="field-besar">
+                        <td colspan="4"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="notes">
+                <label for="notes">Catatan Pembimbing</label>
+                <textarea id="notes" readonly>tolong ta nya diulang lagi ya...</textarea>
+            </div>
         </div>
+        <div class="bap-upload-unduh">
+            <div class="status">Anda Belum Menyetujui!</div>
+            <div class="file-item">
+                <div class="file-icon">📄</div>
+                <div class="file-details">
+                    <div class="file-name">bap something</div>
+                    <div class="file-info">60,9 KB • Vor 0 s</div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="upload-btn" onclick="showPopup()">Upload</button>
+                <button class="download-btn">Unduh</button>
+            </div>
+        </div>
+    </div>
 
-        <div class="card-grid">
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
+    <!-- Popup Modal -->
+    <div class="popup" id="uploadPopup">
+        <div class="popup-content">
+            <h3>Upload</h3>
+            <p>Dengan mengupload, Anda menyetujui BAP ini. Lanjutkan?</p>
+            <div class="file-input">
+                <input type="file" id="fileInput">
             </div>
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
+            <div class="actions">
+                <button class="confirm" onclick="confirmUpload()">Setuju</button>
+                <button class="cancel" onclick="hidePopup()">Balik</button> 
             </div>
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
-            </div>
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
-            </div>
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
-            </div>
-            <div class="card">
-                TA 1: deskripsi...
-                <span>2024/2023</span>
-            </div>
+            <!-- <div class="checkbox">
+                <input type="checkbox" id="agreeCheckbox">
+                <label for="agreeCheckbox">Setuju</label>
+            </div> -->
         </div>
     </div>
 

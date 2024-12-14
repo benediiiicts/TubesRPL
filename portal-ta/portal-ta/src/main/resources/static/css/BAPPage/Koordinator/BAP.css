@@ -206,3 +206,76 @@ textarea {
 .download-btn:hover {
     background-color: #45a049;
 }
+/* Popup container */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup content */
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.popup-content p {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #333;
+}
+
+.popup-content .file-input {
+    margin-bottom: 15px;
+}
+
+.popup-content .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.popup-content button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.popup-content .confirm {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.popup-content .cancel {
+    background-color: #f44336;
+    color: white;
+}
+
+.popup-content .checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+}
+
+.popup-content .checkbox input {
+    margin: 0;
+}

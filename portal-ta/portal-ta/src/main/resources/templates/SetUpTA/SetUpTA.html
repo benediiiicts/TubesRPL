@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Tugas Akhir</title>
+    <link rel="stylesheet" href="/portal-ta/portal-ta/src/main/resources/static/css/SetUpTA/SetUpTA.css">
+    <script rel="text/javascript" src="/portal-ta/portal-ta/src/main/resources/static/js/SetUpTA.js/SetUpTA.js"></script>
+    <script src="SetUpTA.js" defer></script>
+</head>
+<body>
+    
+    <div class="navbar">
+        <h1>Portal TA</h1>
+        <div class="nav-links">
+            <a href="#">Overview</a>
+            <a href="#">Pembobotan</a>
+        </div>
+    </div>
+
+        <section class="content">
+            <button class="back-btn">Back</button>
+            <h3>Tambah Tugas Akhir</h3>
+
+            <form class="form-container">
+                <label for="judul">Judul</label>
+                <input type="text" id="judul" placeholder="Judul Skripsi Mahasiswa">
+
+                <label for="mahasiswa">Mahasiswa</label>
+                <input type="text" id="mahasiswa" placeholder="NPM Mahasiswa">
+
+                <label for="dosen">Dosen Pembimbing</label>
+                <input type="text" id="dosen" placeholder="Auto harusnya">
+
+                <label for="jenis">Jenis TA</label>
+                <select id="jenis">
+                    <option value="">NPM Mahasiswa</option>
+                </select>
+
+                
+            </form>
+        </section>
+        <button type="button" class="save-btn" onclick="showAlert()">SAVE</button>
+    </div>
+</body>
+</html>
