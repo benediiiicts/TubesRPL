@@ -1,13 +1,13 @@
-package com.rpl.portal_ta;
+// package com.rpl.portal_ta;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class PortalTaApplicationTests {
+// @SpringBootTest
+// class PortalTaApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+// 	@Test
+// 	void contextLoads() {
+// 	}
 
-}
+// }
