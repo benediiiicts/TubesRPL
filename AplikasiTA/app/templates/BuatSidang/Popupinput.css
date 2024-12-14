@@ -1,0 +1,71 @@
+.addstaffcontainer{
+    display: none; /* Hide the popup initially */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -400px;
+    width: 800px;
+    height: 500px;  
+    border-style: solid;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+
+.addstaffcontainerheader{
+    width: 100%;
+    height: 20%;
+    /* border-style: solid; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    background-color: gray;
+
+}
+
+.addstaffcontainerheader p{
+    font-size: 30px;
+}
+
+.addstaffcontainerfooter{
+    width: 100%;
+    height: 80%; 
+    /* border-style: solid; */
+    box-sizing: border-box;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(228, 228, 228);
+    
+    
+    flex-direction: column;
+    
+}
+
+.popupform{
+    margin-top: 6% ;
+    display: flex;
+    justify-content: flex-start;
+    
+    align-items: center;
+    flex-direction: column;
+    gap:30px;
+    
+}
+
+#kategoridosen{
+    width: 300px;
+    height: 30px;
+}
+
+#iddosentextfield{
+    width: 300px;
+    height: 30px;
+}
+
+#submitpopup{
+    width: 160px;
+    height: 52px;
+    font-size: 20px;
+}
