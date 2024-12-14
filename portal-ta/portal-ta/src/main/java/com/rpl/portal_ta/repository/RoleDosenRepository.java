@@ -1,5 +1,7 @@
 package com.rpl.portal_ta.repository;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,14 +24,19 @@ public class RoleDosenRepository {
     // Get all RoleDosen
     public List<RoleDosen> getAllRoleDosen() {
         String sql = "SELECT * FROM Role_Dosen";
-        return jdbcTemplate.query(sql, (rs, rowNum) -> {
-            RoleDosen roleDosen = new RoleDosen();
-            roleDosen.setSemesterId(rs.getInt("semester_id"));
-            roleDosen.setRoleId(rs.getInt("role_id"));
-            roleDosen.setNikDosen(rs.getString("nik"));
-            return roleDosen;
-        });
+        return jdbcTemplate.query(sql, this::mapRowToRoleDosen);
+    }
+    
+    public List<RoleDosen> getRoleDosen(int roleId, int semesterId) {
+        String sql ="SELECT * FROM role_dosen WHERE role_id = ? AND semester_id = ?";
+        return jdbcTemplate.query(sql, this::mapRowToRoleDosen, roleId, semesterId);
     }
 
+    private RoleDosen mapRowToRoleDosen(ResultSet resultSet, int rowNum) throws SQLException {
+        return new RoleDosen(
+            resultSet.getInt("semester_id"), 
+            resultSet.getInt("role_id"), 
+            resultSet.getString("nik"));
+    }
 
 }

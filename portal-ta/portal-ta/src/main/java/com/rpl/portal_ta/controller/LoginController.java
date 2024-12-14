@@ -18,7 +18,6 @@ public class LoginController {
 
     @Autowired
     private LoginService loginService;
-
     @Autowired
     private HttpSession session;
 
@@ -32,29 +31,40 @@ public class LoginController {
         Dosen dosen;
 
         try {
-            Object user = loginService.findUser(email);  
+            Object user = loginService.findUser(email, password);  
             if (user != null) {
                 if (user instanceof Dosen) {
                     dosen = (Dosen) user;
                     session.setAttribute("user", dosen);
                     session.setAttribute("nama", dosen.getNama());
+                    if(loginService.isKoor(dosen)){
+                        session.setAttribute("role", "koordinator");
+                        return "redirect:/koordinator/home";
+                    }
+                    else{
+                        session.setAttribute("role", "dosen");
+                        return "redirect:/dosen/home";
+                    }
                 } else if (user instanceof Mahasiswa) {
                     mahasiswa = (Mahasiswa) user;
                     session.setAttribute("user", mahasiswa);
                     session.setAttribute("nama", mahasiswa.getNama());
+                    session.setAttribute("role", "mahasiswa");
+                    return "redirect:/mahasiswa/home";
                 }
             } else {
-                System.out.println("User not found.");
+                model.addAttribute("email", email);
+                model.addAttribute("password", password);
+                model.addAttribute("error", "User not found");
             }
         } catch (Exception e) {
             return e.getMessage();
         }
-        return "";
+        return "/Login/login";
     }
 
     @GetMapping("/Dosen")
     public String loginSuccess() {
-        
         return "/Login/loginSuccess";
     }
 }

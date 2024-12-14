@@ -20,9 +20,10 @@ public class LoginService {
     //         return null;
     //     }
     // }
-    public Object findUser(String email){
-        return loginRepository.findUser(email);
+    public Object findUser(String email, String password){
+        return loginRepository.findUser(email, password);
     }
-
-    
+    public boolean isKoor(Dosen dosen){
+        return loginRepository.isKoor(dosen);
+    }
 }
