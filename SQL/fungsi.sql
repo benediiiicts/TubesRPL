@@ -87,3 +87,39 @@ FROM
 	ON Sidang.ta_id = ta_topic.ta_id
 	INNER JOIN Roles
 	ON Bobot.role_id = Roles.role_id;
+
+
+-- fungsi cari catatan
+SELECT
+	Dosen.nama,
+	Catatan.catatan
+FROM 
+	Catatan
+	INNER JOIN Sidang
+	ON Catatan.sidang_id = Sidang.sidang_id
+	LEFT JOIN Dosen
+	ON Catatan.nik = Dosen.nik
+	INNER JOIN TA
+	ON Sidang.ta_id = TA.ta_id
+WHERE
+	(Catatan.nik = TA.nik_pembimbing1 OR Catatan.nik = TA.nik_pembimbing2);
+	-- Tambah di sini untuk memilih Sidang spesifik
+
+-- fungsi lihat dosen - role
+-- untuk dropdown pilih dosen pembimbing dan penguji 
+-- di page TA dan page Sidang
+SELECT
+	Role_Dosen.semester_id,
+	Dosen.nik,
+	Dosen.nama,
+	Roles.role_name
+FROM 
+	Dosen
+	INNER JOIN Role_Dosen
+	ON Dosen.nik = Role_Dosen.nik
+	INNER JOIN Roles
+	ON Role_Dosen.role_id = Roles.role_id
+WHERE
+	-- Ubah atau tambah disini
+	Role_Dosen.semester_id = 1 
+	AND Role_Dosen.role_id = 2;

@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS Catatan;
 DROP TABLE IF EXISTS Nilai_Sidang;
 DROP TABLE IF EXISTS Sidang;
 DROP TABLE IF EXISTS TA;
@@ -148,6 +149,15 @@ AFTER INSERT ON Nilai_Sidang
 FOR EACH ROW
 EXECUTE FUNCTION calculate_nilai_final();
 
+
+CREATE TABLE Catatan(
+	sidang_id INT NOT NULL,
+	nik VARCHAR(15) NOT NULL,
+	catatan TEXT,
+	PRIMARY KEY (sidang_id, nik),
+	FOREIGN KEY (sidang_id) REFERENCES Sidang(sidang_id),
+	FOREIGN KEY (nik) REFERENCES Dosen(nik)
+);
 
 
 
