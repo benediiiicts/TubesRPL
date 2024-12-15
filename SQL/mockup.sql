@@ -6,7 +6,8 @@ VALUES
     ('D003', 'Dr. Carol', 'carol@example.com', 'hashed_password3'),
     ('D004', 'Dr. David', 'david@example.com', 'hashed_password4'),
     ('D005', 'Dr. Eve', 'eve@example.com', 'hashed_password5'),
-    ('D006', 'Dr. Frank', 'frank@example.com', 'hashed_password6');
+    ('D006', 'Dr. Frank', 'frank@example.com', 'hashed_password6'),
+	('D007', 'Dr. Garry', 'garry@example.com', 'hashed_password7');
 INSERT INTO Semester (tahun_ajaran, periode) 
 VALUES
     ('2023/2024', 'ganjil'),
@@ -28,6 +29,15 @@ VALUES
 	('19010003', 'Budi Santoso', 'budi.santoso@example.com', 'hashed_password3'),
 	('19010004', 'Rina Hartati', 'rina.hartati@example.com', 'hashed_password4'),
 	('19010005', 'Dian Permata', 'dian.permata@example.com', 'hashed_password5');
+INSERT INTO Role_Dosen (semester_id, role_id, nik)
+VALUES
+	(1, 1, 'D007'),
+	(1, 2, 'D001'),
+	(1, 2, 'D002'),
+	(1, 2, 'D003'),
+	(1, 3, 'D004'),
+	(1, 3, 'D005'),
+	(1, 3, 'D006');
 INSERT INTO TA (semester_id, npm, nik_pembimbing1, nik_pembimbing2, topic)
 VALUES
 	(1, '19010001', 'D001', 'D002', 'Fenwick Tree'),
@@ -58,3 +68,11 @@ VALUES
     (3, 1, 78),  -- Assignment: 78
     (3, 2, 84),  -- Midterm: 84
     (3, 3, 75);  -- Final Exam: 75
+
+-- Insert mock data into Catatan for Pembimbing
+INSERT INTO Catatan (sidang_id, nik, catatan)
+VALUES
+    (1, 'D001', 'Revisi pada kode program agar lebih modular dan efisien.'),
+    (1, 'D002', 'Perlu memperbaiki struktur laporan penelitian.'),
+    (2, 'D003', 'Pendekatan yang diambil sudah sesuai, tetapi hasil uji coba perlu diperluas.'),
+    (3, 'D003', 'Penjelasan algoritma backtracking perlu lebih rinci.');
