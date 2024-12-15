@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Tugas Akhir</title>
-    <link rel="stylesheet" href="/portal-ta/portal-ta/src/main/resources/static/css/SetUpTA/SetUpTA.css">
-    <script rel="text/javascript" src="/portal-ta/portal-ta/src/main/resources/static/js/SetUpTA.js/SetUpTA.js"></script>
+    <link rel="stylesheet" th:href="@{/css/SetUpTA/SetUpTA.css}">
+    <script rel="text/javascript" th:src="@{/css/SetUpTA/SetUpTA.js}"></script>
     <script src="SetUpTA.js" defer></script>
 </head>
 <body>
@@ -13,28 +13,31 @@
     <div class="navbar">
         <h1>Portal TA</h1>
         <div class="nav-links">
-            <a href="#">Overview</a>
-            <a href="#">Pembobotan</a>
+            <a href="/koordinator/home/sidang">Sidang</a>
+            <a href="/pembobotan">Pembobotan</a>
+            <a href="/koordinator/home/tugas-akhir">Tugas Akhir</a>
         </div>
     </div>
 
         <section class="content">
-            <button class="back-btn">Back</button>
+            <button class="back-btn" onclick="window.location.href='/koordinator/home/tugas-akhir';">Back</button>
             <h3>Tambah Tugas Akhir</h3>
 
             <form class="form-container">
-                <label for="judul">Judul</label>
-                <input type="text" id="judul" placeholder="Judul Skripsi Mahasiswa">
+                <label for="judul">Topik</label>
+                <input type="text" id="judul" placeholder="Topik Tugas Akhir">
 
                 <label for="mahasiswa">Mahasiswa</label>
-                <input type="text" id="mahasiswa" placeholder="NPM Mahasiswa">
+                <select id="mahasiswa">
+                    <option value="" disabled selected>NPM Mahasiswa</option>
+                </select>
 
                 <label for="dosen">Dosen Pembimbing</label>
-                <input type="text" id="dosen" placeholder="Auto harusnya">
+                <input type="text" id="dosen" placeholder="Dosen Pembimbing">
 
                 <label for="jenis">Jenis TA</label>
                 <select id="jenis">
-                    <option value="">NPM Mahasiswa</option>
+                    <option value="" disabled selected>Jenis TA</option>
                 </select>
 
                 
