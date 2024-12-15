@@ -16,7 +16,17 @@ public class HomeController {
     @GetMapping("/koordinator/home")
     @RequiredRole("koordinator")
     public String redirectKoor(){
-        return "/MainPage/Koordinator/home";
+        return "redirect:/koordinator/home/sidang";
+    }
+    @GetMapping("/koordinator/home/sidang")
+    @RequiredRole("koordinator")
+    public String redirectKoorSidang(){
+        return "/MainPage/Koordinator/Sidang/home";
+    }
+    @GetMapping("/koordinator/home/tugas-akhir")
+    @RequiredRole("koordinator")
+    public String redirectKoorTA(){
+        return "/MainPage/Koordinator/TA/home";
     }
     @GetMapping("/dosen/home")
     @RequiredRole("dosen")

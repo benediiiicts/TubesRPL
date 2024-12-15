@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pembobotan.css">
+    <link rel="stylesheet" th:href="@{css/Pembobotan/pembobotan.css}">
+    <script th:src="@{js/Pembobotan/pembobotan.js}" defer></script>
     <title>Portal TA</title>
     
 </head>
@@ -15,7 +16,7 @@
         </div>
         <!-- <div class="profile">J</div> -->
     </div>
-    <button class="back-button" onclick="window.location.href='../MainPage/Koordinator/home.html';">back</button>
+    <button class="back-button" onclick="window.location.href='/koordinator/home';">back</button>
     <div class="content">
         <h1 class="page-header">Pembobotan</h1>
         <section class="filter-container">
@@ -105,7 +106,5 @@
         </div>
         <button id="submit-new">Submit</button>
     </div>
-
-    <script src="pembobotan.js"></script>
 </body>
 </html>
