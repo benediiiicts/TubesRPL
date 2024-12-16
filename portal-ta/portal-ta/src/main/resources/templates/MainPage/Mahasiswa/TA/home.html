@@ -11,9 +11,8 @@
     <div class="navbar">
         <h1>Portal TA</h1>
         <div class="nav-links">
-            <a href="/koordinator/home/sidang">Sidang</a>
-            <a href="/pembobotan">Pembobotan</a>
-            <a href="/koordinator/home/tugas-akhir">Tugas Akhir</a>
+            <a href="/mahasiswa/home/sidang">Sidang</a>
+            <a href="/mahasiswa/home/tugas-akhir">Tugas Akhir</a>
         </div>
         <button class="logout-button" onclick="window.location.href='/logout';">Log out</button>
         <!-- <div class="profile">J</div> -->
@@ -31,9 +30,6 @@
                             th:text="${semester.tahunAjaran} + ' ' + ${semester.periode}"></option>
                 </select>
             </form>
-            <a href="/tugas-akhir/add-new">
-                <button id="add-new-button">Add New</button>
-            </a>
     </div>
     <div id="sidang-container">
         <div class="Sidangboxcontainer" th:each="sidangTA : ${listSidangTA}">
