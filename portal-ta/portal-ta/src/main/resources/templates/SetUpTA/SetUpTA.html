@@ -38,15 +38,37 @@
                 </th:block>
             </select>
 
-            <label for="dosen">Dosen Pembimbing</label>
+            <label for="mahasiswa">Dosen Pembimbing</label>
+            <select id="mahasiswa" name="mahasiswa" style="width: 100%">
+                <option value="" disabled selected>-- Pilih Dosen Pembimbing --</option>
+                <!-- Data Mahasiswa akan di-render melalui Thymeleaf -->
+                <th:block th:each="dosen : ${dosenList1}">
+                    <option th:value="${dosen.nik}" th:text="${dosen.nik + ' - ' + dosen.nama}"></option>
+                </th:block>
+            </select>
+
+            <label for="mahasiswa">Dosen Pembimbing</label>
+            <select id="mahasiswa" name="mahasiswa" style="width: 100%">
+                <option value="" disabled selected>-- Pilih Dosen Pembimbing 2 (optional) --</option>
+                <!-- Data Mahasiswa akan di-render melalui Thymeleaf -->
+                <th:block th:each="dosen : ${dosenList2}">
+                    <option th:value="${dosen.nik}" th:text="${dosen.nik + ' - ' + dosen.nama}"></option>
+                </th:block>
+            </select>
+
+
+
+            <!-- <label for="dosen">Dosen Pembimbing</label>
             <input type="text" id="dosen" placeholder="Dosen Pembimbing">
 
             <label for="dosen2">Dosen Pembimbing 2</label>
-            <input type="text" id="dosen2" placeholder="Dosen Pembimbing 2 (optional)">
+            <input type="text" id="dosen2" placeholder="Dosen Pembimbing 2 (optional)"> -->
 
             <label for="jenis">Jenis TA</label>
             <select id="jenis" name="jenis">
-                <option value="" disabled selected>Jenis TA</option>
+                <option value="" disabled selected>-- Jenis TA --</option>
+                <option value="1" >1</option>
+                <option value="2" >2</option>
             </select>
         </form>
     </section>
