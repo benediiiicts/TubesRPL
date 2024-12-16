@@ -24,6 +24,9 @@ repositories {
 }
 
 dependencies {
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("org.mockito:mockito-core")
+	testImplementation("org.mockito:mockito-junit-jupiter")
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
 	implementation("org.springframework.boot:spring-boot-starter-validation")
@@ -34,7 +37,6 @@ dependencies {
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("org.postgresql:postgresql")
 	annotationProcessor("org.projectlombok:lombok")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
