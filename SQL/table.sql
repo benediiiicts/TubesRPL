@@ -94,6 +94,7 @@ CREATE TABLE TA(
 	npm VARCHAR(15) NOT NULL,
 	nik_pembimbing1 VARCHAR(15) NOT NULL,
 	nik_pembimbing2 VARCHAR(15), --nullable
+	tipe INT NOT NULL, 
 	topic VARCHAR(252) NOT NULL,
 	FOREIGN KEY (semester_id) REFERENCES Semester(semester_id),
 	FOREIGN KEY (nik_pembimbing1) REFERENCES Dosen(nik),

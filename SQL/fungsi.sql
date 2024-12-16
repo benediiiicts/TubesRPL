@@ -5,6 +5,7 @@ SELECT
 	Mahasiswa.nama AS "Mahasiswa", 
 	Dosen1.nama AS "Dosen Pembimbing Utama", 
 	Dosen2.nama "Dosen Pembimbing Pendamping", 
+	tipe,
 	topic
 FROM 
 	TA 

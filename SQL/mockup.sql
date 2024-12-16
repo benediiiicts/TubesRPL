@@ -38,11 +38,11 @@ VALUES
 	(1, 3, 'D004'),
 	(1, 3, 'D005'),
 	(1, 3, 'D006');
-INSERT INTO TA (semester_id, npm, nik_pembimbing1, nik_pembimbing2, topic)
+INSERT INTO TA (semester_id, npm, nik_pembimbing1, nik_pembimbing2, tipe, topic)
 VALUES
-	(1, '19010001', 'D001', 'D002', 'Fenwick Tree'),
-	(1, '19010002', 'D003', NULL, 'Genetic Algorithm'),
-	(1, '19010003', 'D003', NULL, 'Back-tracking and Forward-checking');
+	(1, '19010001', 'D001', 'D002', 1, 'Fenwick Tree'),
+	(1, '19010002', 'D003', NULL, 1, 'Genetic Algorithm'),
+	(1, '19010003', 'D003', NULL, 2, 'Back-tracking and Forward-checking');
 INSERT INTO Sidang (semester_id, ta_id, nik_penguji1, nik_penguji2, tanggal, waktu, tempat)
 VALUES
 	(1, 1, 'D004', 'D005', '2024-1-15', '10:00:00', 'Ruang 101'),
