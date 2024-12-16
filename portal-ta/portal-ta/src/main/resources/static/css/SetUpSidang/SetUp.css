@@ -72,33 +72,7 @@ body {
     width: 70px;
     cursor: pointer;
 }
-.staff-component{
-    margin: 10px;
-    display: grid;
-    grid-template-areas: 'name role button';
-}
-.nama-staff{
-    grid-area: name;
-    display: flex;
-    background-color: #D9D9D9;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
-}
-.role-staff{
-    display: flex;
-    grid-area: role;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background-color: #989898;
-}
-.comp-delete{
-    grid-area: button;
-    border: none;
-    margin-left: 10px;
-    background-color: #D9D9D9;
-}
+
 .TA-form{
     margin-top: 30px;
     grid-area: form;
@@ -148,11 +122,7 @@ body {
 #jenis{
     grid-area: type;
 }
-.staff-container{
-    width: 550px;
-    margin-top: 30px;
-    grid-area: list;
-}
+
 #staffs{
     border: 1px solid;
     border-radius: 5px;
@@ -167,4 +137,131 @@ body {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+.staffcontainer{
+    border-style: solid;
+    border-width: 1px;
+    width: 50%;
+    height: 90%;
+    box-sizing: border-box;
+}
+
+.staffcontainer-header{
+    /* border-style: solid; */
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    
+    
+}
+
+.staffcontainer-header p{
+   font-size: 30px; 
+}
+
+.staffcontainer-body{
+    box-sizing: border-box;
+    /* border-style: solid; */
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.dosenbox{
+    width: 90%;
+    height: 40px;
+    display:flex;
+    box-sizing: border-box;
+    border-style: solid;
+    justify-content: space-between;
+    align-items: center;
+    padding:20px
+}
+
+#addstaff{
+    width: 120px;
+    height: 40px;
+}
+.addstaffcontainer{
+    display: none; /* Hide the popup initially */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -400px;
+    width: 800px;
+    height: 500px;  
+    border-style: solid;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+
+.addstaffcontainerheader{
+    width: 100%;
+    height: 20%;
+    /* border-style: solid; */
+    box-sizing: border-box;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    background-color: gray;
+
+}
+
+.addstaffcontainerheader p{
+    font-size: 30px;
+}
+
+.addstaffcontainerfooter{
+    width: 100%;
+    height: 80%; 
+    /* border-style: solid; */
+    box-sizing: border-box;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    background-color: rgb(228, 228, 228);
+    
+    
+    flex-direction: column;
+    
+}
+
+.popupform{
+    margin-top: 6% ;
+    display: flex;
+    justify-content: flex-start;
+    
+    align-items: center;
+    flex-direction: column;
+    gap:30px;
+    
+}
+
+#kategoridosen{
+    width: 300px;
+    height: 30px;
+}
+
+#iddosentextfield{
+    width: 300px;
+    height: 30px;
+}
+
+#submitpopup{
+    width: 160px;
+    height: 52px;
+    font-size: 20px;
 }
