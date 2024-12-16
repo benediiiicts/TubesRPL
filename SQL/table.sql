@@ -138,10 +138,12 @@ $$ LANGUAGE plpgsql;
 CREATE TABLE Nilai_Sidang(
 	sidang_id INT NOT NULL,
 	bobot_id INT NOT NULL,
+	nik VARCHAR(15) NOT NULL,
 	nilai INT NOT NULL,
 	nilai_final INT,
 	FOREIGN KEY (sidang_id) REFERENCES Sidang(sidang_id),
-	FOREIGN KEY (bobot_id) REFERENCES Bobot(bobot_id)
+	FOREIGN KEY (bobot_id) REFERENCES Bobot(bobot_id),
+	FOREIGN KEY (nik) REFERENCES Dosen(nik)
 );
 
 CREATE TRIGGER trigger_calculate_nilai_final
