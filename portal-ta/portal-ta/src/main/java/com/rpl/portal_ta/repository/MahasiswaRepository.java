@@ -20,6 +20,12 @@ public class MahasiswaRepository {
         List<Mahasiswa> listMahasiswa = jdbcTemplate.query(sql, this::mapRowToMahasiswa, npm);
         return listMahasiswa.get(0);
     }
+
+    public List<Mahasiswa> getAllMahasiswa(){
+        String sql = "SELECT * FROM Mahasiswa";
+        List<Mahasiswa> listMahasiswa = jdbcTemplate.query(sql, this::mapRowToMahasiswa);
+        return listMahasiswa;
+    }
     private Mahasiswa mapRowToMahasiswa(ResultSet resultSet, int rowNum) throws SQLException {
         return new Mahasiswa(
             resultSet.getString("npm"), 

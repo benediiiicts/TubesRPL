@@ -1,5 +1,7 @@
 package com.rpl.portal_ta.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +16,8 @@ public class MahasiswaService {
 
     public Mahasiswa getMahasiswa(String npm){
         return mahasiswaRepository.getMahasiswa(npm);
+    }
+    public List<Mahasiswa> getAllMahasiswa(){
+        return mahasiswaRepository.getAllMahasiswa();
     }
 }

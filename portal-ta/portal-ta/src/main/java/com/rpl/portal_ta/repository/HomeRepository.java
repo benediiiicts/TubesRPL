@@ -55,13 +55,15 @@ public class HomeRepository {
             resultSet.getTime("waktu"),
             resultSet.getString("tempat"));
     }
+
     private TA mapRowToTA(ResultSet resultSet, int rowNum) throws SQLException {
         return new TA(
             resultSet.getInt("ta_id"), 
             resultSet.getInt("semester_id"), 
             resultSet.getString("npm"), 
             resultSet.getString("nik_pembimbing1"), 
-            resultSet.getString("nik_pembimbing2"),  
-            resultSet.getString("topic"));
+            resultSet.getString("nik_pembimbing2"), 
+            resultSet.getString("topic"), 
+            resultSet.getInt("jenisTA"));
     }
 }

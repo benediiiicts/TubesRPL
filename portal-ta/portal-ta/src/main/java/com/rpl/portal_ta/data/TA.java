@@ -4,9 +4,11 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class TA{
     @NotNull
     private int taId;
@@ -27,4 +29,7 @@ public class TA{
 
     @NotNull
     private String topic;
+
+    @NotNull 
+    private int jenisTA;
 }
