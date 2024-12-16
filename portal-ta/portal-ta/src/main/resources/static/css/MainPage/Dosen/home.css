@@ -1,9 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #f2f2f2;
+body{
+    font-family: 'Roboto', sans-serif;
+    margin:0;
 }
-
 .navbar {
     background-color: #ddd;
     padding: 10px 20px;
@@ -59,63 +57,148 @@ body {
     cursor: pointer;
 }
 
-.content {
-    padding: 20px;
+
+#bodycontainer{
+    /* background-color: black; */
+    width: 100%;
+    /* height: 1024px; */
+    /* display: flex;
+    align-items: center; */
+    /* justify-content: center; */
+    /* padding: 100px; */
+    padding-top: 50px;
+    padding-left: 240px;
+    /* margin-right: 290px; */
+    /* padding-bottom: 30px; */
+    
 }
 
-.content h2 {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.filter-container {
+#subjudul{
     display: flex;
-    justify-content: start;
+    align-items: start;
+    font-size: 30px;
+}
+
+.utilitycontainer {
+    display: flex;
+     /* Center the search bar */
     align-items: center;
-    margin-bottom: 20px;
+    margin-top: 20px; /* Add some space from the top */
 }
 
-.filter-container select,
-.filter-container input[type="text"],
-.filter-container button {
+.search-bar {
     padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 300px; /* Set a width for the search bar */
+    border: 2px solid #ccc;
     border-radius: 5px;
 }
 
-.filter-container button {
-    background-color: #333;
+.search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #575757;
     color: white;
-    cursor: pointer;
-}
-
-.filter-container button:hover {
-    background-color: #555;
-}
-
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding-inline: 10%;
-}
-
-.card-grid a{
-    color: black;
-    text-decoration: none;
-}
-
-.card {
-    background-color: #ccc;
+    border: none;
     border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-    height: 200px;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
-.card span {
-    display: block;
-    font-size: 14px;
+.search-button:hover {
+    background-color: #dedede;
+    color:black;
+    border: solid 1px;
+}
+
+#sort{
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+#filter{
+    padding: 10px;
+    padding-right: 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-left: 10px;
+}
+
+.Sidangboxcontainer{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-top: 20px;
+    /* background-color: black; */
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto new lines */
+    justify-content: flex-start; /* Align items to the start of the container */
+    align-items: flex-start; /* Align items to the top */
+    gap: 10px; /* Space between items */
+    /* border: 2px solid black;  */
+    padding: 10px;
+    padding-left: 0%;
+    padding-right: 0%;
+    min-height: 100px; /* Minimum height to show content */
+    position: absolute;
+    
+
+    
+    
+}
+.Sidangbox{
+    width: 320px;
+    height: 253px;
+    /* border:solid; */
+    
+    
+    
+}
+.SidangboxDescription{
+    width: 100%;
+    height: 80%;
+    /* border: solid 1px; */
+    background-color:#D9D9D9;
+    margin: 0px;
+}
+
+.SidangboxPicture{
+    width: 100%;
+    height: 20%;
+    /* border: solid 1px; */
+    background-color: #575757;
+    margin: 0px;
+    display: flow-root;
+    overflow: hidden;
+}
+
+.judulSidang{
+    margin : 0px;
+    
+    margin-left: 10px;
+    font-size: 22px;
+}
+.deskripsiSidang{
+    margin : 0px;
+    margin-left: 10px;
     margin-top: 10px;
+    font-size: 16px;
+}
+
+.subjudulcontainer{
+    /* border: solid; */
+    position: relative;
+    top: 10px;
+}
+
+.Sidangboxlink{
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make it behave like a block element */
 }

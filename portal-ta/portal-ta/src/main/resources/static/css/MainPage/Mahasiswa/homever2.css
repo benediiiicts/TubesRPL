@@ -2,50 +2,59 @@ body{
     font-family: 'Roboto', sans-serif;
     margin:0;
 }
-#navbarcontainer{
-    width: 100%;
-    height: 90px;
-    background-color: #D9D9D9;
-    margin:0;
+.navbar {
+    background-color: #ddd;
+    padding: 10px 20px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center; /* Align items vertically */
-    box-sizing: border-box;
-    padding: 10px; 
-            
 }
 
 
-.leftgroup,
-.rightgroup{
-    display: flex; /* Keep items in a row within the group */
-    gap: 60px; /* Add spacing between items in each group */
-    
+.navbar h1 {
+    font-size: 25px;
+    margin: 0;
 }
 
-.judulkecil{
-    font-size: 23px;
-    align-items: center;
+.navbar .nav-links {
     display: flex;
-    
+    gap: 20px;
+    padding-left: 20px;
 }
 
-#judul{
-    font-size: 40px;
-    
+.navbar .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
 }
 
-#logout{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 140px;
-    height: 30px;
-    background-color: #D9D9D9;
-    border:solid 1px;
-    padding:20px;
+.navbar .nav-links a:hover {
+    color: #ffffff;
+}
+
+.navbar .profile {
+    background-color: green;
+    color: white;
+    font-size: 14px;
     font-weight: bold;
-    font-size: 20px ;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.logout-button {
+    background-color: white;
+    border-radius: 5px;
+    font-size: medium;
+    border: none;
+    padding: 5px;
+    margin-left: auto;
+    margin-top: 2px;
+    width: 140px;
+    cursor: pointer;
 }
 
 
@@ -120,7 +129,7 @@ body{
     margin-left: 10px;
 }
 
-.UMKboxcontainer{
+.Sidangboxcontainer{
     /* display: flex;
     align-items: center;
     justify-content: center; */
@@ -132,35 +141,64 @@ body{
     justify-content: flex-start; /* Align items to the start of the container */
     align-items: flex-start; /* Align items to the top */
     gap: 10px; /* Space between items */
-    border: 2px solid black; /* Visualize the container */
+    /* border: 2px solid black;  */
     padding: 10px;
+    padding-left: 0%;
+    padding-right: 0%;
     min-height: 100px; /* Minimum height to show content */
+    position: absolute;
+    
 
     
     
 }
-.UMKbox{
+.Sidangbox{
     width: 320px;
     height: 253px;
-    background-color: #D9D9D9;
+    /* border:solid; */
+    
+    
+    
 }
-.UMKboxPicture{
-    width: 320px;
-    height: 158px;
-    border: solid 1px;
+.SidangboxDescription{
+    width: 100%;
+    height: 80%;
+    /* border: solid 1px; */
+    background-color:#D9D9D9;
+    margin: 0px;
 }
 
-.UMKboxDescription{
-    width: 320px;
-    height: 95px;
-    border: solid 1px;
+.SidangboxPicture{
+    width: 100%;
+    height: 20%;
+    /* border: solid 1px; */
+    background-color: #575757;
+    margin: 0px;
+    display: flow-root;
+    overflow: hidden;
 }
 
-.judulUMK{
-    margin : 10px;
+.judulSidang{
+    margin : 0px;
+    
+    margin-left: 10px;
     font-size: 22px;
 }
-.deskripsiUMK{
-    margin : 10px;
+.deskripsiSidang{
+    margin : 0px;
+    margin-left: 10px;
+    margin-top: 10px;
     font-size: 16px;
+}
+
+.subjudulcontainer{
+    /* border: solid; */
+    position: relative;
+    top: 10px;
+}
+
+.Sidangboxlink{
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make it behave like a block element */
 }
