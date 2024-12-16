@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{css/Pembobotan/pembobotan.css}">
+    <link rel="stylesheet" href="/TubesRPL/portal-ta/portal-ta/src/main/resources/static/css/Pembobotan/pembobotan.css">
     <script th:src="@{js/Pembobotan/pembobotan.js}" defer></script>
     <title>Portal TA</title>
     
@@ -34,20 +34,6 @@
                         <span class="persen">%</span>
                     </div>
                 </div>
-                <div id="bobot-pembimbing" class="bobot-dosen">
-                    <div class="title-bobot">Bobot Pembimbing</div>
-                    <div class="value-bobot">
-                        <input type="number" class="bobot-value" max="99" placeholder=" -" />
-                        <span class="persen">%</span>
-                    </div>
-                </div>
-                <div id="bobot-penguji" class="bobot-dosen">
-                    <div class="title-bobot">Bobot Penguji</div>
-                    <div class="value-bobot">
-                        <input type="number" class="bobot-value" max="99" placeholder=" -" />
-                        <span class="persen">%</span>
-                    </div>
-                </div>
                 <!-- <div class="update-value">
                     <label for="value-text">enter new value</label>
                     <input type="text" id="value-text" placeholder="Value">
@@ -63,7 +49,51 @@
         <div class="component-grid">
             <div class="components">
                 <label for="component-container">Komponen Nilai</label>
-                <div id="component-container">
+                <div id="component-container-koordinator">
+                    <!-- <div class="component"> -->
+                        <!-- <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button> -->
+                    <!-- </div> -->
+                    <!-- <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div> -->
+                </div>
+            </div>
+            <div>
+                <button class="add-button" id="add-new-koordinator">Add new</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="bobot-pembimbing" class="bobot-dosen">
+        <div class="title-bobot">Bobot Pembimbing</div>
+        <div class="value-bobot">
+            <input type="number" class="bobot-value" max="99" placeholder=" -" />
+            <span class="persen">%</span>
+        </div>
+    </div>
+    <div class="component-grid">
+            <div class="components" id="component-pembimbing">
+                <label for="component-container">Komponen Nilai</label>
+                <div id="component-container-pembimbing">
                     <!-- <div class="component"> -->
                         <!-- <div class="comp-title">TATA TULIS LAPORAN</div>
                         <div class="comp-bobot">15%</div>
@@ -96,13 +126,56 @@
             </div>
         </div>
     </div>
-
+    <div id="bobot-penguji" class="bobot-dosen">
+        <div class="title-bobot">Bobot Penguji</div>
+        <div class="value-bobot">
+            <input type="number" class="bobot-value" max="99" placeholder=" -" />
+            <span class="persen">%</span>
+        </div>
+    </div>
+    <div class="component-grid">
+            <div class="components" id="component-penguji">
+                <label for="component-container">Komponen Nilai</label>
+                <div id="component-container-penguji">
+                    <!-- <div class="component"> -->
+                        <!-- <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button> -->
+                    <!-- </div> -->
+                    <!-- <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div>
+                    <div class="component">
+                        <div class="comp-title">TATA TULIS LAPORAN</div>
+                        <div class="comp-bobot">15%</div>
+                        <button class="comp-delete">delete</button>
+                    </div> -->
+                </div>
+            </div>
+            <div>
+                <button class="add-button" id="add-new">Add new</button>
+            </div>
+        </div>
+    </div>
+    <!-- pop up buat nambah kriteria dan persentagenya-->
     <div id="popup-overlay"></div>
     <div id="popup">
         <h3>Add New Component</h3>
         <div class="text-input">
             <input type="text" id="new-title" placeholder="Title" />
-            <input type="number" id="new-percentage" placeholder="Percentage" />    
+            <input type="number" id="new-percentage" placeholder="Percentage" />
         </div>
         <button id="submit-new">Submit</button>
     </div>

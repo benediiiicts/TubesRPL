@@ -179,15 +179,33 @@ body {
     margin-left: 7%;
     padding-top: 0%;
 }
-#component-container{
+#component-container-koordinator{
     grid-area: comps;
     border: 1px solid;
+}
+#component-container-pembimbing{
+    grid-area: comps;
+    border: 1px solid;
+    width: 480px;
+}
+#component-container-penguji{
+    grid-area: comps;
+    border: 1px solid;
+    width: 480px;
+    /* margin-left: 50px; */
 }
 .components label{
     font-size: x-large;
 }
 .components{
     width: 100%;
+    /* margin-left: 190px; */
+}
+#component-penguji{
+    margin-left: 190px;
+}
+#component-pembimbing{
+    margin-left: 190px;
 }
 .component{
     padding: 10px;
@@ -235,6 +253,12 @@ body {
     margin-top: 25px;
     margin-left: 10px;
 }
+#bobot-pembimbing{
+    margin-left: 290px;
+}
+#bobot-penguji{
+    margin-left: 290px;
+}
 #popup {
     position: fixed;
     top: 50%;
@@ -276,4 +300,11 @@ body {
 }
 #popup button:hover {
     background-color: #218838;
+}
+/* #add-new-koodinator {
+    margin-left: 150px;
+} */
+
+#add-new{
+    margin-right: 330px;
 }
