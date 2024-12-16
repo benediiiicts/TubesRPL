@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pembobotan</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <h1>Pembobotan Komponen Nilai</h1>
+
+    <!-- Komponen untuk Koordinator -->
+    <div class="component-grid">
+        <h2>Komponen Koordinator</h2>
+        <div id="komponen-koordinator">
+            <div th:each="bobot : ${komponenKoordinator}">
+                <div class="component">
+                    <strong th:text="${bobot.komponen}">Komponen</strong>: 
+                    <span th:text="${bobot.persentase}">Persentase</span>%
+                </div>
+            </div>
+        </div>
+        <button type="button" onclick="openPopup(1)">Add new Koordinator</button>
+    </div>
+
+    <!-- Komponen untuk Penguji -->
+    <div class="component-grid">
+        <h2>Komponen Penguji</h2>
+        <div id="komponen-penguji">
+            <div th:each="bobot : ${komponenPenguji}">
+                <div class="component">
+                    <strong th:text="${bobot.komponen}">Komponen</strong>: 
+                    <span th:text="${bobot.persentase}">Persentase</span>%
+                </div>
+            </div>
+        </div>
+        <button type="button" onclick="openPopup(2)">Add new Penguji</button>
+    </div>
+
+    <!-- Komponen untuk Pembimbing -->
+    <div class="component-grid">
+        <h2>Komponen Pembimbing</h2>
+        <div id="komponen-pembimbing">
+            <div th:each="bobot : ${komponenPembimbing}">
+                <div class="component">
+                    <strong th:text="${bobot.komponen}">Komponen</strong>: 
+                    <span th:text="${bobot.persentase}">Persentase</span>%
+                </div>
+            </div>
+        </div>
+        <button type="button" onclick="openPopup(3)">Add new Pembimbing</button>
+    </div>
+
+    <!-- Popup untuk menambahkan komponen -->
+    <div id="popup-overlay" style="display: none;"></div>
+    <div id="popup" style="display: none;">
+        <h3>Add New Component</h3>
+        <div class="text-input">
+            <input type="text" id="new-title" placeholder="Title" />
+            <input type="number" id="new-percentage" placeholder="Percentage" />
+        </div>
+        <form id="popup-form" action="#" method="post">
+            <input type="hidden" id="role-id" name="addKomponen" value="" />
+            <input type="hidden" id="komponen" name="komponen" value="" />
+            <input type="hidden" id="persentase" name="persentase" value="" />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Fungsi untuk membuka popup dan mengatur nilai roleId sesuai tombol yang ditekan
+        function openPopup(roleId) {
+            document.getElementById("role-id").value = roleId;  // Menyimpan nilai roleId yang dipilih
+
+            // Menampilkan popup
+            document.getElementById("popup-overlay").style.display = "block";
+            document.getElementById("popup").style.display = "block";
+        }
+
+        // Menangani pengiriman data form setelah input di popup
+        document.querySelector("#popup-form").onsubmit = function(event) {
+            var komponen = document.getElementById("new-title").value;
+            var persentase = document.getElementById("new-percentage").value;
+            
+            // Mengupdate hidden input dengan nilai dari form input
+            document.getElementById("komponen").value = komponen;
+            document.getElementById("persentase").value = persentase;
+
+            // Tentukan action form berdasarkan role yang dipilih
+            var roleId = document.getElementById("role-id").value;
+            if (roleId == "1") {
+                document.getElementById("popup-form").action = "/pembobotan/add-komponen-koordinator";
+            } else if (roleId == "2") {
+                document.getElementById("popup-form").action = "/pembobotan/add-komponen-penguji";
+            } else if (roleId == "3") {
+                document.getElementById("popup-form").action = "/pembobotan/add-komponen-pembimbing";
+            }
+        };
+    </script>
+</body>
+</html>
