@@ -6,9 +6,11 @@ import jakarta.validation.constraints.Size;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Mahasiswa{
     
     @Size(min = 10, max = 10)

@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Tugas Akhir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <link rel="stylesheet" th:href="@{/css/SetUpTA/SetUpTA.css}">
     <script rel="text/javascript" th:src="@{/css/SetUpTA/SetUpTA.js}"></script>
     <script src="SetUpTA.js" defer></script>
 </head>
 <body>
-    
     <div class="navbar">
         <h1>Portal TA</h1>
         <div class="nav-links">
@@ -19,31 +21,45 @@
         </div>
     </div>
 
-        <section class="content">
-            <button class="back-btn" onclick="window.location.href='/koordinator/home/tugas-akhir';">Back</button>
-            <h3>Tambah Tugas Akhir</h3>
+    <section class="content">
+        <button class="back-btn" onclick="window.location.href='/koordinator/home/tugas-akhir';">Back</button>
+        <h3>Tambah Tugas Akhir</h3>
 
-            <form class="form-container">
-                <label for="judul">Topik</label>
-                <input type="text" id="judul" placeholder="Topik Tugas Akhir">
+        <form class="form-container">
+            <label for="judul">Topik</label>
+            <input type="text" id="judul" placeholder="Topik Tugas Akhir">
 
-                <label for="mahasiswa">Mahasiswa</label>
-                <select id="mahasiswa">
-                    <option value="" disabled selected>NPM Mahasiswa</option>
-                </select>
+            <label for="mahasiswa">Mahasiswa</label>
+            <select id="mahasiswa" name="mahasiswa" style="width: 100%">
+                <option value="" disabled selected>-- Pilih Mahasiswa --</option>
+                <!-- Data Mahasiswa akan di-render melalui Thymeleaf -->
+                <th:block th:each="mahasiswa : ${mahasiswaList}">
+                    <option th:value="${mahasiswa.npm}" th:text="${mahasiswa.npm + ' - ' + mahasiswa.nama}"></option>
+                </th:block>
+            </select>
 
-                <label for="dosen">Dosen Pembimbing</label>
-                <input type="text" id="dosen" placeholder="Dosen Pembimbing">
+            <label for="dosen">Dosen Pembimbing</label>
+            <input type="text" id="dosen" placeholder="Dosen Pembimbing">
 
-                <label for="jenis">Jenis TA</label>
-                <select id="jenis">
-                    <option value="" disabled selected>Jenis TA</option>
-                </select>
+            <label for="dosen2">Dosen Pembimbing 2</label>
+            <input type="text" id="dosen2" placeholder="Dosen Pembimbing 2 (optional)">
 
-                
-            </form>
-        </section>
-        <button type="button" class="save-btn" onclick="showAlert()">SAVE</button>
-    </div>
+            <label for="jenis">Jenis TA</label>
+            <select id="jenis" name="jenis">
+                <option value="" disabled selected>Jenis TA</option>
+            </select>
+        </form>
+    </section>
+    <button type="button" class="save-btn" onclick="showAlert()">SAVE</button>
+
+    <script>
+        $(document).ready(function() {
+            // Apply Select2 plugin on the mahasiswa select element
+            $('#mahasiswa').select2({
+                placeholder: "Pilih Mahasiswa",
+                allowClear: true
+            });
+        });
+    </script>
 </body>
 </html>
