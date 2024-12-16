@@ -94,6 +94,7 @@ CREATE TABLE TA(
 	npm VARCHAR(15) NOT NULL,
 	nik_pembimbing1 VARCHAR(15) NOT NULL,
 	nik_pembimbing2 VARCHAR(15), --nullable
+	tipe INT NOT NULL, 
 	topic VARCHAR(252) NOT NULL,
 	FOREIGN KEY (semester_id) REFERENCES Semester(semester_id),
 	FOREIGN KEY (nik_pembimbing1) REFERENCES Dosen(nik),
@@ -138,10 +139,12 @@ $$ LANGUAGE plpgsql;
 CREATE TABLE Nilai_Sidang(
 	sidang_id INT NOT NULL,
 	bobot_id INT NOT NULL,
+	nik VARCHAR(15) NOT NULL,
 	nilai INT NOT NULL,
 	nilai_final INT,
 	FOREIGN KEY (sidang_id) REFERENCES Sidang(sidang_id),
-	FOREIGN KEY (bobot_id) REFERENCES Bobot(bobot_id)
+	FOREIGN KEY (bobot_id) REFERENCES Bobot(bobot_id),
+	FOREIGN KEY (nik) REFERENCES Dosen(nik)
 );
 
 CREATE TRIGGER trigger_calculate_nilai_final

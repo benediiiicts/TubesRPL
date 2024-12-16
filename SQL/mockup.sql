@@ -38,36 +38,36 @@ VALUES
 	(1, 3, 'D004'),
 	(1, 3, 'D005'),
 	(1, 3, 'D006');
-INSERT INTO TA (semester_id, npm, nik_pembimbing1, nik_pembimbing2, topic)
+INSERT INTO TA (semester_id, npm, nik_pembimbing1, nik_pembimbing2, tipe, topic)
 VALUES
-	(1, '19010001', 'D001', 'D002', 'Fenwick Tree'),
-	(1, '19010002', 'D003', NULL, 'Genetic Algorithm'),
-	(1, '19010003', 'D003', NULL, 'Back-tracking and Forward-checking');
+	(1, '19010001', 'D001', 'D002', 1, 'Fenwick Tree'),
+	(1, '19010002', 'D003', NULL, 1, 'Genetic Algorithm'),
+	(1, '19010003', 'D003', NULL, 2, 'Back-tracking and Forward-checking');
 INSERT INTO Sidang (semester_id, ta_id, nik_penguji1, nik_penguji2, tanggal, waktu, tempat)
 VALUES
 	(1, 1, 'D004', 'D005', '2024-1-15', '10:00:00', 'Ruang 101'),
 	(1, 2, 'D005', 'D006', '2024-1-16', '8:00:00', 'Ruang 103'),
 	(1, 3, 'D004', 'D006', '2024-1-16', '10:00:00', 'Ruang 103');
 -- Sidang ID 1 (for student '19010001')
-INSERT INTO Nilai_Sidang (sidang_id, bobot_id, nilai)
+INSERT INTO Nilai_Sidang (sidang_id, bobot_id, nik, nilai)
 VALUES
-    (1, 1, 85),  -- Assignment: 85
-    (1, 2, 90),  -- Midterm: 90
-    (1, 3, 80);  -- Final Exam: 80
+    (1, 1, 'D007', 85),  -- Assignment: 85
+    (1, 2, 'D007', 90),  -- Midterm: 90
+    (1, 3, 'D007', 80);  -- Final Exam: 80
 
 -- Sidang ID 2 (for student '19010002')
-INSERT INTO Nilai_Sidang (sidang_id, bobot_id, nilai)
+INSERT INTO Nilai_Sidang (sidang_id, bobot_id, nik, nilai)
 VALUES
-    (2, 1, 88),  -- Assignment: 88
-    (2, 2, 92),  -- Midterm: 92
-    (2, 3, 85);  -- Final Exam: 85
+    (2, 1, 'D007', 88),  -- Assignment: 88
+    (2, 2, 'D007', 92),  -- Midterm: 92
+    (2, 3, 'D007', 85);  -- Final Exam: 85
 
 -- Sidang ID 3 (for student '19010003')
-INSERT INTO Nilai_Sidang (sidang_id, bobot_id, nilai)
+INSERT INTO Nilai_Sidang (sidang_id, bobot_id, nik, nilai)
 VALUES
-    (3, 1, 78),  -- Assignment: 78
-    (3, 2, 84),  -- Midterm: 84
-    (3, 3, 75);  -- Final Exam: 75
+    (3, 1, 'D007', 78),  -- Assignment: 78
+    (3, 2, 'D007', 84),  -- Midterm: 84
+    (3, 3, 'D007', 75);  -- Final Exam: 75
 
 -- Insert mock data into Catatan for Pembimbing
 INSERT INTO Catatan (sidang_id, nik, catatan)

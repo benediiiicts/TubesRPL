@@ -5,6 +5,7 @@ SELECT
 	Mahasiswa.nama AS "Mahasiswa", 
 	Dosen1.nama AS "Dosen Pembimbing Utama", 
 	Dosen2.nama "Dosen Pembimbing Pendamping", 
+	tipe,
 	topic
 FROM 
 	TA 
@@ -65,6 +66,7 @@ SELECT
 	ta_topic.topic,
 	ta_topic.npm,
 	Roles.role_name,
+	Dosen.nama,
 	Bobot.komponen,
 	Nilai_Sidang.nilai,
 	Bobot.persentase,
@@ -86,7 +88,9 @@ FROM
 	) AS ta_topic
 	ON Sidang.ta_id = ta_topic.ta_id
 	INNER JOIN Roles
-	ON Bobot.role_id = Roles.role_id;
+	ON Bobot.role_id = Roles.role_id
+	INNER JOIN Dosen
+	ON Nilai_Sidang.nik = Dosen.nik;
 
 
 -- fungsi cari catatan
