@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/SetUpSidang/popUp/Popupinput.css}">
+    <script th:src="@{/js/SetUpSidang/SetUp.js}" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="addstaffcontainer">
+        <div class="addstaffcontainerheader">
+            <p>Add Staff</p>
+        </div>
+        <div class="addstaffcontainerfooter">
+            <div class="popupform">
+                <legend>NIK Dosen</legend>
+                <input type="text" name="iddosen" id="iddosentextfield" placeholder="No Dosen">
+                <legend>Pilih Kategori</legend>
+                <select name="kategoridosen" id="kategoridosen">
+                    <option value="Default">--Pilih Kategori--</option>
+                    <option value="Penguji">Penguji</option>
+                    <option value="Pembimbing">Pembimbing</option>
+                </select>
+                <button type="submit" id="submitpopup">Submit</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
