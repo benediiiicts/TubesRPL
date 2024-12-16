@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" th:href="@{/css/home.css}">
+    <script rel="text/javascript" th:src="@{/js/MainPage/home.js}" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -20,131 +21,39 @@
     
     <div id="bodycontainer">
         <div id="subjudul"> Sidang TA Overview</div>
-        <div class="utilitycontainer">
-            
-
-            <select id="sort" name="sort">
-                <option>24/25 Ganjil</option>
-                <option>23/24 Genap</option>
-                <option>23/24 Ganjil</option>
-                <option>22/23 Genap</option>
-                <option>22/23 Ganjil</option>
-            </select>
-            <input type="text" class="search-bar" placeholder="Search...">
-            <button class="search-button">Search</button>
-            
-            
-
-            <select id="filter" name="filter">
-                <option>Semua</option>
-                <option>Aktif</option>
-                <option>Tidak Aktif</option>
-            </select>
-        </div>
-        <div id="sidang-container">
-            <div class="Sidangboxcontainer">
-                <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
-                    <div class="Sidangbox">
-                    
-                        <div class="SidangboxPicture"></div>
-                        <div class="SidangboxDescription">
-                            <div class = "subjudulcontainer">
-                                <p class="judulSidang">SIDANG TA : deskripsi</p>
-                                <p class="deskripsiSidang">TA 1 /2</p>
-                            </div>
-                        </div>
-                    </div>
-                </a> 
+            <div class="utilitycontainer">
+                <form method="get" action="/filter-ta" id="filterForm">    
+                    <select id="sort" name="sort" onchange="this.form.submit()">
+                        <option value="">Select Semester</option>
+                        <option th:each="semester : ${semesters}" 
+                                th:value="${semester.semesterId}" 
+                                th:text="${semester.tahunAjaran} + ' ' + ${semester.periode}"></option>
+                    </select>
+                    <input type="text" class="search-bar" placeholder="Search...">
+                    <button class="search-button">Search</button>
+                </form>
+                <select id="filter" name="filter">
+                    <option>Semua</option>
+                    <option>Aktif</option>
+                    <option>Tidak Aktif</option>
+                </select>
             </div>
-            <div class="Sidangboxcontainer">
-                <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
-                    <div class="Sidangbox">
-                    
-                        <div class="SidangboxPicture"></div>
-                        <div class="SidangboxDescription">
-                            <div class = "subjudulcontainer">
-                                <p class="judulSidang">SIDANG TA : deskripsi</p>
-                                <p class="deskripsiSidang">TA 1 /2</p>
+            <div id="sidang-container">
+                <div class="Sidangboxcontainer" th:each="ta : ${tugasAkhir}">
+                    <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
+                        <div class="Sidangbox">
+                            <div class="SidangboxPicture"></div>
+                            <div class="SidangboxDescription">
+                                <div class = "subjudulcontainer">
+                                    <p class="judulSidang" th:text="${ta.topic}"></p>
+                                    <p class="deskripsiSidang" th:text="${ta.npm}"></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a> 
-            </div>
-            <div class="Sidangboxcontainer">
-                <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
-                    <div class="Sidangbox">
-                    
-                        <div class="SidangboxPicture"></div>
-                        <div class="SidangboxDescription">
-                            <div class = "subjudulcontainer">
-                                <p class="judulSidang">SIDANG TA : deskripsi</p>
-                                <p class="deskripsiSidang">TA 1 /2</p>
-                            </div>
-                        </div>
-                    </div>
-                </a> 
-            </div>
-            <div class="Sidangboxcontainer">
-                <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
-                    <div class="Sidangbox">
-                    
-                        <div class="SidangboxPicture"></div>
-                        <div class="SidangboxDescription">
-                            <div class = "subjudulcontainer">
-                                <p class="judulSidang">SIDANG TA : deskripsi</p>
-                                <p class="deskripsiSidang">TA 1 /2</p>
-                            </div>
-                        </div>
-                    </div>
-                </a> 
-            </div>
-            <div class="Sidangboxcontainer">
-                <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
-                    <div class="Sidangbox">
-                    
-                        <div class="SidangboxPicture"></div>
-                        <div class="SidangboxDescription">
-                            <div class = "subjudulcontainer">
-                                <p class="judulSidang">SIDANG TA : deskripsi</p>
-                                <p class="deskripsiSidang">TA 1 /2</p>
-                            </div>
-                        </div>
-                    </div>
-                </a> 
-            </div>
-            <div class="Sidangboxcontainer">
-                <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
-                    <div class="Sidangbox">
-                    
-                        <div class="SidangboxPicture"></div>
-                        <div class="SidangboxDescription">
-                            <div class = "subjudulcontainer">
-                                <p class="judulSidang">SIDANG TA : deskripsi</p>
-                                <p class="deskripsiSidang">TA 1 /2</p>
-                            </div>
-                        </div>
-                    </div>
-                </a> 
-            </div>
-            <div class="Sidangboxcontainer">
-                <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
-                    <div class="Sidangbox">
-                    
-                        <div class="SidangboxPicture"></div>
-                        <div class="SidangboxDescription">
-                            <div class = "subjudulcontainer">
-                                <p class="judulSidang">SIDANG TA : deskripsi</p>
-                                <p class="deskripsiSidang">TA 1 /2</p>
-                            </div>
-                        </div>
-                    </div>
-                </a> 
+                    </a> 
+                </div>
             </div>
         </div>
-            
-            
-        </div>
-        
     </div>
 
     <script>
@@ -164,7 +73,7 @@
             var newUMKbox = document.createElement('div');
             newUMKbox.classList.add('UMKbox');
 
-            var newUMKboxPicture = document.createElement('div');
+            var newMKboxPicture = document.createElement('div');
             newUMKboxPicture.classList.add('UMKboxPicture');
 
             var newUMKboxDescription = document.createElement('div');
