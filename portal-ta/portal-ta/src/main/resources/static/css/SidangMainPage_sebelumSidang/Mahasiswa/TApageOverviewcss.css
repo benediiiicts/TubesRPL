@@ -49,19 +49,18 @@ body {
     border-radius: 50%;
 }
 
-#backbutton{
-    position: absolute;
-    width: 100px;
-    height : 45px;
-    /* border-style: solid; */
-    top:60px;
-    left:16px;
-    font-size: 36px;
-    
-    display: flex;
-    justify-content: center;
+.back-button {
     background-color: #ddd;
-    
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.back-button:hover {
+    background-color: #ccc;
 }
 
 #judulTA{

@@ -27,4 +27,7 @@ public class DosenService {
     public List<Dosen> getAllDosen(){
         return dosenRepository.getAllDosen();
     }
+    public Dosen getDosen(String nik){
+        return dosenRepository.getDosen(nik);
+    }
 }

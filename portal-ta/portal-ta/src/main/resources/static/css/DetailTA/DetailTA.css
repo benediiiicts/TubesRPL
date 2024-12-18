@@ -114,10 +114,12 @@ span {
     height: 30px;
     background-color: #e0e0e0;
     border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 20px;
 }
 
 .input-box.large {
-    height: 100px; /* Larger box for Deskripsi TA */
+    height: 200px; /* Larger box for Deskripsi TA */
 }
 
 

@@ -24,6 +24,11 @@ public class DosenRepository {
         String sql = "SELECT * FROM Dosen";
         return jdbcTemplate.query(sql, this::mapRowToDosen);
     }
+    public Dosen getDosen(String nik){
+        String sql = "SELECT * FROM Dosen WHERE nik = ?";
+        Dosen dosen = jdbcTemplate.query(sql, this::mapRowToDosen, nik).get(0);
+        return dosen;
+    }
 
     private Dosen mapRowToDosen(ResultSet resultSet, int rowNum) throws SQLException {
         Dosen dosen = new Dosen();

@@ -25,12 +25,12 @@
         <button class="back-btn" onclick="window.location.href='/koordinator/home/tugas-akhir';">Back</button>
         <h3>Tambah Tugas Akhir</h3>
 
-        <form class="form-container">
+        <form id="tugasAkhirForm" class="form-container" th:action="@{/koordinator/tugas-akhir/save}" method="post">
             <label for="judul">Topik</label>
-            <input type="text" id="judul" placeholder="Topik Tugas Akhir">
+            <input type="text" name="judul" id="judul" placeholder="Topik Tugas Akhir">
 
             <label for="mahasiswa">Mahasiswa</label>
-            <select id="mahasiswa" name="mahasiswa" style="width: 100%">
+            <select class="dropdown" name="mahasiswa" style="width: 100%">
                 <option value="" disabled selected>-- Pilih Mahasiswa --</option>
                 <!-- Data Mahasiswa akan di-render melalui Thymeleaf -->
                 <th:block th:each="mahasiswa : ${mahasiswaList}">
@@ -39,46 +39,33 @@
             </select>
 
             <label for="mahasiswa">Dosen Pembimbing</label>
-            <select id="mahasiswa" name="mahasiswa" style="width: 100%">
+            <select class="dropdown" name="pembimbing-1" style="width: 100%">
                 <option value="" disabled selected>-- Pilih Dosen Pembimbing --</option>
-                <!-- Data Mahasiswa akan di-render melalui Thymeleaf -->
                 <th:block th:each="dosen : ${dosenList1}">
                     <option th:value="${dosen.nik}" th:text="${dosen.nik + ' - ' + dosen.nama}"></option>
                 </th:block>
             </select>
 
             <label for="mahasiswa">Dosen Pembimbing</label>
-            <select id="mahasiswa" name="mahasiswa" style="width: 100%">
+            <select class="dropdown" name="pembimbing-2" style="width: 100%">
                 <option value="" disabled selected>-- Pilih Dosen Pembimbing 2 (optional) --</option>
-                <!-- Data Mahasiswa akan di-render melalui Thymeleaf -->
                 <th:block th:each="dosen : ${dosenList2}">
                     <option th:value="${dosen.nik}" th:text="${dosen.nik + ' - ' + dosen.nama}"></option>
                 </th:block>
             </select>
-
-
-
-            <!-- <label for="dosen">Dosen Pembimbing</label>
-            <input type="text" id="dosen" placeholder="Dosen Pembimbing">
-
-            <label for="dosen2">Dosen Pembimbing 2</label>
-            <input type="text" id="dosen2" placeholder="Dosen Pembimbing 2 (optional)"> -->
-
             <label for="jenis">Jenis TA</label>
-            <select id="jenis" name="jenis">
+            <select class="dropdown" id="jenis" name="jenis">
                 <option value="" disabled selected>-- Jenis TA --</option>
                 <option value="1" >1</option>
                 <option value="2" >2</option>
             </select>
+            <button type="submit" class="save-btn">SAVE</button>
         </form>
     </section>
-    <button type="button" class="save-btn" onclick="showAlert()">SAVE</button>
-
     <script>
         $(document).ready(function() {
-            // Apply Select2 plugin on the mahasiswa select element
-            $('#mahasiswa').select2({
-                placeholder: "Pilih Mahasiswa",
+            $('.dropdown').select2({
+                placeholder: "Pilih",
                 allowClear: true
             });
         });
