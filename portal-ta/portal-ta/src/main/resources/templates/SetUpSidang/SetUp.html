@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <link rel="stylesheet" th:href="@{/css/SetUpSidang/SetUp.css}">
     <script th:src="@{/js/SetUpSidang/SetUp.js}" defer></script>
     <title>Document</title>
@@ -18,65 +21,58 @@
         <!-- <div class="profile">J</div> -->
     </div>
     <button class="back-button" onclick="window.location.href='/koordinator/home';">back</button>
-    <div class="content">
-        <h1 class="page-header">TA Overview / Set Up TA</h1>
-        <div class="set-up-ta">
-            <div class="TA-form">
-                <div class="component" id="title-TA">
-                    <label for="title">Judul</label><br>
-                    <input type="text" name="title" id="title" placeholder="Judul Sidang">
-                </div>
-                <div class="component" id="date">
-                    <label for="date-ta">Tanggal</label><br>
-                    <input type="date" name="date-ta" id="date-ta">
-                </div>
-                <div class="component" id="time">
-                    <label for="time-ta">Waktu</label><br>
-                    <input type="time" name="time-ta" id="time-ta">
-                </div>
-                <div class="component" id="mahasiswa">
-                    <label for="mahasiswa-ta">Mahasiswa</label><br>
-                    <select name="mahasiswa-ta" id="mahasiswa-ta">
-                        <option value="Default">--Pilih Mahasiswa--</option>
-                        <option value="M1">Mahasiswa 1</option>
-                    </select>
-                    <!-- <input type="text" name="mahasiswa-ta" id="mahasiswa-ta"> -->
-                </div>
-                <div class="component" id="tempat">
-                    <label for="tempat"></label>Tempat<br>
-                    <input type="text" name="tempat" id="tempat">
-                </div>
-                <div class="component" id="keterangan">
-                    <label for="jenis-ta">Jenis TA</label><br>
-                    <select name="jenis-ta" id="jenis-ta">
-                        <option value="Default">--TA1/TA2--</option>
-                        <option value="TA1">Topik 1</option>
-                        <option value="TA2">Topik 2</option>
-                    </select>
-                </div>
-
-                
-                <div class="component" id="jenis">
-                    <label for="topik-ta">Topik TA</label><br>
-                    <input type="text" name="topik-ta" id="topik-ta">
-                </div>
-                <div class="component">
-                    <button class="add-button" id="add-new">Create TA</button>
-                </div>
-            </div>
-            <div class="staffcontainer">
-                <div class="staffcontainer-header">
-                    <p>Staff :</p>
-                    <button id="addstaff">Add Staff</button>
-                </div>
-                <div class="staffcontainer-body">
-                    <div class="dosenbox">
-                        <p>Name</p>
-                        <p>Role</p>
+    <form id="sidangForm" method="post" th:action="@{/koordinator/sidang/save}">
+        <div class="content">
+            <h1 class="page-header">Buat Sidang Baru</h1>
+            <div class="set-up-ta">
+                <div class="TA-form">
+                    <div class="component" id="title-TA">
+                        <label for="tugas-akhir">Tugas Akhir</label><br>
+                        <select class="dropdown" name="tugas-akhir">
+                            <option value="" disabled selected>Select a TA</option>
+                            <th:block th:each="ta : ${taList}">
+                                <option th:value="${ta.taId}" 
+                                        th:text="${ta.topic + ' - ' + ta.npm}"></option>
+                            </th:block>
+                        </select>
+                    </div>
+                    <div class="component" id="penguji-1">
+                        <label for="penguji1">Penguji 1</label><br>
+                        <select class="dropdown" name="penguji1">
+                            <option value="" disabled selected>Select a TA</option>
+                            <th:block th:each="dosen : ${dosenList1}">
+                                <option th:value="${dosen.nik}" th:text="${dosen.nik + ' - ' + dosen.nama}"></option>
+                            </th:block>
+                        </select>
+                    </div>
+                    <div class="component" id="penguji-2">
+                        <label for="penguji2">Penguji 2</label><br>
+                        <select class="dropdown" name="penguji2">
+                            <option value="" disabled selected>Select a TA</option>
+                            <th:block th:each="dosen : ${dosenList2}">
+                                <option th:value="${dosen.nik}" th:text="${dosen.nik + ' - ' + dosen.nama}"></option>
+                            </th:block>
+                        </select>
+                    </div>
+                    <div class="component" id="date">
+                        <label for="date-ta">Tanggal</label><br>
+                        <input type="date" name="date-ta" id="date-ta">
+                    </div>
+                    <div class="component" id="time">
+                        <label for="time-ta">Waktu</label><br>
+                        <input type="time" name="time-ta" id="time-ta">
+                    </div>
+                    <div class="component" id="tempat">
+                        <label for="tempat"></label>Tempat<br>
+                        <input type="text" name="tempat" id="tempat">
+                    </div>
+                    <div class="component">
+                        <button type="submit" class="add-button" id="add-new">Buat Sidang</button>
                     </div>
                 </div>
-            </div>
-    </div>
+        </div>
+    </form>
+
     <div class="addstaffcontainer">
         <div class="addstaffcontainerheader">
             <p>Add Staff</p>
@@ -96,5 +92,13 @@
 
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('.dropdown').select2({
+                placeholder: "Pilih",
+                allowClear: true
+            });
+        });
+    </script>
 </body>
 </html>

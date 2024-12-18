@@ -9,9 +9,6 @@ body {
     position: relative;
     overflow: hidden;
     display: grid;
-    grid-template-areas: 
-        'form list';
-    grid-template-columns: 600px auto;
 }
 .navbar {
     background-color: #ddd;
@@ -50,7 +47,6 @@ body {
     border-radius: 50%;
 }
 .content {
-    margin-left: 15%;
     padding: 20px;
     padding-top: 0;
 }
@@ -59,7 +55,7 @@ body {
     padding-bottom: 0%;
     margin-bottom: 0%;
     margin-top: 0%;
-    margin-left: 7%;
+    text-align: center;
 }
 .back-button {
     background-color: #D9D9D9;
@@ -75,16 +71,15 @@ body {
 
 .TA-form{
     margin-top: 30px;
-    grid-area: form;
     display: grid;
+    justify-content: center;
     grid-template-areas: 
         'title'
+        'dosen1'
+        'dosen2'
         'date'
         'time'
-        'student'
-        'place'
-        'topic'
-        'type';
+        'place';
 }
 .component{
     margin: 10px;
@@ -122,7 +117,12 @@ body {
 #jenis{
     grid-area: type;
 }
-
+#penguji-1{
+    grid-area: dosen1;
+}
+#penguji-2{
+    grid-area: dosen2;
+}
 #staffs{
     border: 1px solid;
     border-radius: 5px;

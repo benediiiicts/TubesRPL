@@ -37,17 +37,17 @@
     </div>
     <div id="sidang-container">
         <div class="Sidangboxcontainer" th:each="sidangTA : ${listSidangTA}">
-            <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
+            <a th:href="@{/ta-page/{id}(id=${sidangTA.ta.taId})}" class="Sidangboxlink">
                 <div class="Sidangbox">
                     <div class="SidangboxPicture"></div>
                     <div class="SidangboxDescription">
-                        <div class = "subjudulcontainer">
+                        <div class="subjudulcontainer">
                             <p class="judulSidang" th:text="${sidangTA.ta.topic}"></p>
                             <p class="deskripsiSidang" th:text="${sidangTA.mahasiswa.nama}"></p>
                         </div>
                     </div>
                 </div>
-            </a> 
+            </a>
         </div>
     </div>
 

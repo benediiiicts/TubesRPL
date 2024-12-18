@@ -64,6 +64,6 @@ public class HomeRepository {
             resultSet.getString("nik_pembimbing1"), 
             resultSet.getString("nik_pembimbing2"), 
             resultSet.getString("topic"), 
-            resultSet.getInt("jenisTA"));
+            resultSet.getInt("tipe"));
     }
 }

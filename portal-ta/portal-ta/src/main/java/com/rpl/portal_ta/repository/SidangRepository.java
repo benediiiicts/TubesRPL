@@ -3,8 +3,15 @@ package com.rpl.portal_ta.repository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.rpl.portal_ta.data.Semester;
+import com.rpl.portal_ta.data.Sidang;
 import com.rpl.portal_ta.data.SidangPage;
+import com.rpl.portal_ta.data.TA;
 
+import jakarta.servlet.http.HttpSession;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 @Repository
@@ -15,6 +22,19 @@ public class SidangRepository {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+    public void save(Sidang sidang, HttpSession session){
+        Semester curSemester = (Semester)session.getAttribute("semester");
+        String sql = "INSERT INTO sidang (ta_id, nik_penguji1, nik_penguji2, tanggal, waktu, tempat, semester_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, sidang.getTaId(), sidang.getNikPenguji1(), sidang.getNikPenguji2(), 
+        sidang.getTanggal(), sidang.getWaktu(), sidang.getTempat(), curSemester.getSemesterId());
+    }
+
+    public Sidang getOneSidang(int id_sidang){
+        Sidang sidang;
+        String sql = "SELECT * FROM sidang WHERE sidang_id = ?";
+        sidang = jdbcTemplate.query(sql, this::mapRowToSidang, id_sidang).get(0);
+        return sidang;
+    }
     public List<SidangPage> getSidangPageData(int semesterId) {
         String sql = "SELECT " +
                 "    Page_TA.topic AS \"Topic TA\", " +
@@ -52,17 +72,28 @@ public class SidangRepository {
             }
         
             // This method maps each row to a SidangPage object
-            private SidangPage mapRowToSidangPage(java.sql.ResultSet rs, int rowNum) throws java.sql.SQLException {
-                SidangPage sidangPage = new SidangPage();
-                sidangPage.setTopicTA(rs.getString("Topic TA"));
-                sidangPage.setTanggal(rs.getString("Tanggal"));
-                sidangPage.setWaktu(rs.getString("Waktu"));
-                sidangPage.setTempat(rs.getString("Tempat"));
-                sidangPage.setMahasiswa(rs.getString("Mahasiswa"));
-                sidangPage.setDosenPembimbingUtama(rs.getString("Dosen Pembimbing Utama"));
-                sidangPage.setDosenPembimbingPendamping(rs.getString("Dosen Pembimbing Pendamping"));
-                sidangPage.setDosenKetuaPenguji(rs.getString("Dosen Ketua Penguji"));
-                sidangPage.setDosenAnggotaPenguji(rs.getString("Dosen Anggota Penguji"));
-                return sidangPage;
-            }
+    private SidangPage mapRowToSidangPage(java.sql.ResultSet rs, int rowNum) throws java.sql.SQLException {
+        SidangPage sidangPage = new SidangPage();
+        sidangPage.setTopicTA(rs.getString("Topic TA"));
+        sidangPage.setTanggal(rs.getString("Tanggal"));
+        sidangPage.setWaktu(rs.getString("Waktu"));
+        sidangPage.setTempat(rs.getString("Tempat"));
+        sidangPage.setMahasiswa(rs.getString("Mahasiswa"));
+        sidangPage.setDosenPembimbingUtama(rs.getString("Dosen Pembimbing Utama"));
+        sidangPage.setDosenPembimbingPendamping(rs.getString("Dosen Pembimbing Pendamping"));
+        sidangPage.setDosenKetuaPenguji(rs.getString("Dosen Ketua Penguji"));
+        sidangPage.setDosenAnggotaPenguji(rs.getString("Dosen Anggota Penguji"));
+        return sidangPage;
+    }
+    private Sidang mapRowToSidang(ResultSet resultSet, int rowNum) throws SQLException {
+    return new Sidang(
+        resultSet.getInt("sidang_id"), 
+        resultSet.getInt("semester_id"), 
+        resultSet.getInt("ta_id"), 
+        resultSet.getString("nik_penguji1"), 
+        resultSet.getString("nik_penguji2"), 
+        resultSet.getDate("tanggal"),
+        resultSet.getTime("waktu"),
+        resultSet.getString("tempat"));
+    }
 }
