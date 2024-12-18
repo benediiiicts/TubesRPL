@@ -3,7 +3,12 @@ package com.rpl.portal_ta.repository;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.rpl.portal_ta.data.Semester;
+import com.rpl.portal_ta.data.Sidang;
 import com.rpl.portal_ta.data.SidangPage;
+import com.rpl.portal_ta.data.TA;
+
+import jakarta.servlet.http.HttpSession;
 
 import java.util.List;
 
@@ -13,6 +18,13 @@ public class SidangRepository {
 
     public SidangRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public void save(Sidang sidang, HttpSession session){
+        Semester curSemester = (Semester)session.getAttribute("semester");
+        String sql = "INSERT INTO sidang (ta_id, nik_penguji1, nik_penguji2, tanggal, waktu, tempat, semester_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        jdbcTemplate.update(sql, sidang.getTaId(), sidang.getNikPenguji1(), sidang.getNikPenguji2(), 
+        sidang.getTanggal(), sidang.getWaktu(), sidang.getTempat(), curSemester.getSemesterId());
     }
 
     public List<SidangPage> getSidangPageData(int semesterId) {

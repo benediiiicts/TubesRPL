@@ -20,6 +20,7 @@ import com.rpl.portal_ta.data.SidangTA;
 import com.rpl.portal_ta.data.TA;
 import com.rpl.portal_ta.service.HomeService;
 import com.rpl.portal_ta.service.MahasiswaService;
+import com.rpl.portal_ta.service.SemesterService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -29,6 +30,9 @@ public class HomeController {
     
     @Autowired
     private HomeService homeService;
+
+    @Autowired
+    private SemesterService semesterService;
 
     @Autowired
     private MahasiswaService mahasiswaService;
@@ -152,55 +156,64 @@ public class HomeController {
     }
     @GetMapping("/koordinator/home")
     @RequiredRole("koordinator")
-    public String redirectKoor(Model model){
+    public String redirectKoor(Model model, HttpSession session){
+        session.setAttribute("semester", semesterService.getSemester());
         model.addAttribute("semesters", getSemesters());
         return "redirect:/koordinator/home/sidang";
     }
     @GetMapping("/koordinator/home/sidang")
     @RequiredRole("koordinator")
-    public String redirectKoorSidang(Model model){
+    public String redirectKoorSidang(Model model, HttpSession session){
+        session.setAttribute("semester", semesterService.getSemester());
         model.addAttribute("semesters", getSemesters());
         return "/MainPage/Koordinator/Sidang/home";
     }
     @GetMapping("/koordinator/home/tugas-akhir")
     @RequiredRole("koordinator")
-    public String redirectKoorTA(Model model){
+    public String redirectKoorTA(Model model, HttpSession session){
+        session.setAttribute("semester", semesterService.getSemester());
         model.addAttribute("semesters", getSemesters());
         return "/MainPage/Koordinator/TA/home";
     }
     @GetMapping("/dosen/home")
     @RequiredRole("dosen")
-    public String redirectDosen(Model model){
+    public String redirectDosen(Model model, HttpSession session){
+        session.setAttribute("semester", semesterService.getSemester());
         model.addAttribute("semesters", getSemesters());
         return "redirect:/dosen/home/sidang";
     }
     @GetMapping("/dosen/home/sidang")
     @RequiredRole("dosen")
-    public String redirectDosenSidang(Model model){
+    public String redirectDosenSidang(Model model, HttpSession session){
+        session.setAttribute("semester", semesterService.getSemester());
         model.addAttribute("semesters", getSemesters());
         return "/MainPage/Dosen/Sidang/home";
     }
     @GetMapping("/dosen/home/tugas-akhir")
     @RequiredRole("dosen")
-    public String redirectDosenTA(Model model){
+    public String redirectDosenTA(Model model, HttpSession session){
+        session.setAttribute("semester", semesterService.getSemester());
         model.addAttribute("semesters", getSemesters());
         return "/MainPage/Dosen/TA/home";
     }
     @GetMapping("/mahasiswa/home")
     @RequiredRole("mahasiswa")
-    public String redirectMahasiswa(Model model){
+    public String redirectMahasiswa(Model model, HttpSession session){
+        session.setAttribute("semester", semesterService.getSemester());
         model.addAttribute("semesters", getSemesters());
         return "redirect:/mahasiswa/home/sidang";
     }
     @GetMapping("/mahasiswa/home/sidang")
     @RequiredRole("mahasiswa")
-    public String redirectMahasiswaSidang(Model model){
+    public String redirectMahasiswaSidang(Model model, HttpSession session){
+        session.setAttribute("semester", semesterService.getSemester());
         model.addAttribute("semesters", getSemesters());
         return "/MainPage/Mahasiswa/Sidang/home";
     }
     @GetMapping("/mahasiswa/home/tugas-akhir")
     @RequiredRole("mahasiswa")
-    public String redirectMahasiswaTA(Model model){
+    public String redirectMahasiswaTA(Model model, HttpSession session){
+        session.setAttribute("semester", semesterService.getSemester());
         model.addAttribute("semesters", getSemesters());
         return "/MainPage/Mahasiswa/TA/home";
     }

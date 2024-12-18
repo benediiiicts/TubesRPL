@@ -8,28 +8,6 @@ addStaffButton.addEventListener('click', () => {
     console.log('Add Staff button clicked!');
 });
 
-// Function to load the popup into the main page
-// function loadPopup() {
-//     fetch('/sidang/add-new')
-//         .then(response => {
-//             if (!response.ok) {
-//                 throw new Error('Failed to load popup HTML');
-//             }
-//             return response.text();
-//         })
-//         .then(html => {
-//             // Insert the popup into the body
-//             document.body.insertAdjacentHTML('beforeend', html);
-
-//             // Initialize the popup logic
-//             setUpPopupLogic();
-//         })
-//         .catch(error => console.error('Error loading popup:', error));
-// }
-
-// Call loadPopup when the script loads
-// loadPopup();
-
 function setUpPopupLogic() {
     const popupContainer = document.querySelector('.addstaffcontainer');
     const addStaffButton = document.getElementById('addstaff');

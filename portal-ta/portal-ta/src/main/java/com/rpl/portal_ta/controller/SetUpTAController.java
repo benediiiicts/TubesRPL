@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.rpl.portal_ta.RequiredRole;
@@ -16,6 +17,7 @@ import com.rpl.portal_ta.service.MahasiswaService;
 import com.rpl.portal_ta.service.SemesterService;
 import com.rpl.portal_ta.service.TAService;
 
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class SetUpTAController {
@@ -35,26 +37,27 @@ public class SetUpTAController {
     @GetMapping("/tugas-akhir/add-new")
     @RequiredRole("koordinator")
     public String tugasAkhirFormMahasiswa(Model model) {
-        // Ambil daftar mahasiswa
         List<Mahasiswa> mahasiswaList = mahasiswaService.getAllMahasiswa();
         List<Dosen> dosenList = dosenService.getAllDosen();
         model.addAttribute("mahasiswaList", mahasiswaList);
         model.addAttribute("dosenList1", dosenList);
         model.addAttribute("dosenList2", dosenList);
 
-        return "/SetUpTA/SetUpTA";  // Mengembalikan nama template Thymeleaf
+        return "/SetUpTA/SetUpTA";
     }
 
-    @PostMapping("/tugas-akhir/save")
+    @PostMapping("/koordinator/tugas-akhir/save")
     @RequiredRole("koordinator")
-    public String saveTugasAkhir(@RequestParam("judul") String judul,
-                                 @RequestParam("mahasiswa") String npm, // menerima npm mahasiswa
-                                 @RequestParam("dosen") String nikPembimbing,
-                                 @RequestParam("dosen2") String nikPembimbing2,
-                                 @RequestParam("jenis") int jenisTA) {
+    public String saveTugasAkhir(
+            @RequestParam(value = "judul") String judul,
+            @RequestParam(value = "mahasiswa") String npm,
+            @RequestParam(value = "pembimbing-1") String nikPembimbing,
+            @RequestParam(value = "pembimbing-2", required = false) String nikPembimbing2,
+            @RequestParam(value = "jenis") int jenisTA, HttpSession session) {
+        
         int semesterId = semesterService.getSemester().getSemesterId();
         
-        taService.saveTugasAkhir(semesterId, judul, npm, nikPembimbing, nikPembimbing2, jenisTA);
-        return "redirect:/tugas-akhir";  // Redirect ke halaman daftar tugas akhir
+        taService.saveTugasAkhir(semesterId, judul, npm, nikPembimbing, nikPembimbing2, jenisTA, session);
+        return "redirect:/koordinator/home/tugas-akhir";
     }
 }
