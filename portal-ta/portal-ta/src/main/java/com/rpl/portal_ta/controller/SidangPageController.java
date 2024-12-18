@@ -95,7 +95,7 @@ public class SidangPageController {
                 else
                     return "/SidangMainPage/Pembimbing/TAPage";
             else if(session.getAttribute("role").equals("mahasiswa"))
-                return "#";
+                return "redirect:/BAP";
             else
                 return "/";
         }
