@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/TubesRPL/portal-ta/portal-ta/src/main/resources/static/css/Pembobotan/pembobotan.css">
     <script th:src="@{js/Pembobotan/pembobotan.js}" defer></script>
+    <script>
+        // Fungsi untuk membuka popup dan mengatur roleId
+        function openPopup(roleId) {
+            // Set nilai role-id
+            document.getElementById("role-id").value = roleId;
+
+            // Tampilkan popup
+            document.getElementById("popup-overlay").style.display = "block";
+            document.getElementById("popup").style.display = "block";
+        }
+
+        // Menutup popup
+        document.getElementById("popup-overlay").onclick = function () {
+            document.getElementById("popup-overlay").style.display = "none";
+            document.getElementById("popup").style.display = "none";
+        };
+
+        // Menangani pengiriman form
+        document.querySelector("#popup-form").onsubmit = function (event) {
+            var komponen = document.getElementById("new-title").value;
+            var persentase = document.getElementById("new-percentage").value;
+
+            // Validasi input
+            if (!komponen || !persentase) {
+                alert("Mohon isi semua field.");
+                event.preventDefault();
+                return;
+            }
+
+            // Set action form berdasarkan roleId
+            var roleId = document.getElementById("role-id").value;
+            if (roleId == "1") {
+                document.getElementById("popup-form").action = "/pembobotan/add-komponen-koordinator";
+            } else if (roleId == "2") {
+                document.getElementById("popup-form").action = "/pembobotan/add-komponen-penguji";
+            } else if (roleId == "3") {
+                document.getElementById("popup-form").action = "/pembobotan/add-komponen-pembimbing";
+            }
+        };
+    </script>
     <title>Portal TA</title>
     
 </head>
@@ -20,12 +60,7 @@
     <div class="content">
         <h1 class="page-header">Pembobotan</h1>
         <section class="filter-container">
-            <!-- <select class="category">
-                <option>Koordinator</option>
-                <option>Penguji</option>
-                <option>Pembimbing</option>
-            </select> -->
-            <!-- Persentase Role -->
+           
             <div class="filtered-content">
                 <div id="bobot-koordinator" class="bobot-dosen">
                     <div class="title-bobot">Bobot Koordinator</div>
@@ -34,16 +69,6 @@
                         <span class="persen">%</span>
                     </div>
                 </div>
-                <!-- <div class="update-value">
-                    <label for="value-text">enter new value</label>
-                    <input type="text" id="value-text" placeholder="Value">
-                </div>
-                <div class="update-btn">
-                    <button class="update-button">Update</button>
-                </div>
-                <div class="reset-value">
-                    <button class="delete-button">Delete</button>
-                </div> -->
             </div>
         </section>
         <div class="component-grid">
@@ -54,31 +79,16 @@
                         <!-- <div class="comp-title">TATA TULIS LAPORAN</div>
                         <div class="comp-bobot">15%</div>
                         <button class="comp-delete">delete</button> -->
-                    <!-- </div> -->
-                    <!-- <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
+                    <div class="component" th:each="bobot : ${komponenKoordinator}">
+                        <div class="comp-title" th:text="${bobot.komponen}"></div>
+                        <div class="comp-bobot" th:text="${bobot.persentase + ' %'}"></div>
+                        <button class="comp-delete">Delete</button>
                     </div>
-                    <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
-                    </div>
-                    <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
-                    </div>
-                    <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
-                    </div> -->
+                    
                 </div>
             </div>
             <div>
-                <button class="add-button" id="add-new-koordinator">Add new</button>
+                <button class="add-button" id="add-new-koordinator" onclick="openPopup(1)">Add new</button>
             </div>
         </div>
     </div>
@@ -98,31 +108,15 @@
                         <!-- <div class="comp-title">TATA TULIS LAPORAN</div>
                         <div class="comp-bobot">15%</div>
                         <button class="comp-delete">delete</button> -->
-                    <!-- </div> -->
-                    <!-- <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
+                    <div class="component" th:each="bobot : ${komponentPembimbing}">
+                        <div class="comp-title" th:text="${bobot.komponen}"></div>
+                        <div class="comp-bobot" th:text="${bobot.persentase + ' %'}"></div>
+                        <button class="comp-delete">Delete</button>
                     </div>
-                    <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
-                    </div>
-                    <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
-                    </div>
-                    <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
-                    </div> -->
                 </div>
             </div>
             <div>
-                <button class="add-button" id="add-new">Add new</button>
+                <button class="add-button" id="add-new" onclick="openPopup(3)">Add new</button>
             </div>
         </div>
     </div>
@@ -141,36 +135,20 @@
                         <!-- <div class="comp-title">TATA TULIS LAPORAN</div>
                         <div class="comp-bobot">15%</div>
                         <button class="comp-delete">delete</button> -->
-                    <!-- </div> -->
-                    <!-- <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
-                    </div>
-                    <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
-                    </div>
-                    <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
-                    </div>
-                    <div class="component">
-                        <div class="comp-title">TATA TULIS LAPORAN</div>
-                        <div class="comp-bobot">15%</div>
-                        <button class="comp-delete">delete</button>
-                    </div> -->
+               <div class="component" th:each="bobot : ${komponenPenguji}">
+                    <div class="comp-title" th:text="${bobot.komponen}"></div>
+                    <div class="comp-bobot" th:text="${bobot.persentase + ' %'}"></div>
+                    <button class="comp-delete">Delete</button>
                 </div>
             </div>
             <div>
-                <button class="add-button" id="add-new">Add new</button>
+                <button class="add-button" id="add-new" onclick="openpopup(2)">Add new</button>
             </div>
         </div>
     </div>
     <!-- pop up buat nambah kriteria dan persentagenya-->
-    <div id="popup-overlay"></div>
+    <!-- <div id="popup-overlay"></div>
+
     <div id="popup">
         <h3>Add New Component</h3>
         <div class="text-input">
@@ -178,6 +156,21 @@
             <input type="number" id="new-percentage" placeholder="Percentage" />
         </div>
         <button id="submit-new">Submit</button>
+    </div> -->
+
+    <div id="popup-overlay" style="display: none;"></div>
+    <div id="popup" style="display: none;">
+        <h3>Add New Component</h3>
+        <div class="text-input">
+            <input type="text" id="new-title" placeholder="Title" />
+            <input type="number" id="new-percentage" placeholder="Percentage" />
+        </div>
+        <form id="popup-form" action="#" method="post">
+            <input type="hidden" id="role-id" name="addKomponen" value="" />
+            <input type="hidden" id="komponen" name="komponen" value="" />
+            <input type="hidden" id="persentase" name="persentase" value="" />
+            <button type="submit">Submit</button>
+        </form>
     </div>
 </body>
 </html>

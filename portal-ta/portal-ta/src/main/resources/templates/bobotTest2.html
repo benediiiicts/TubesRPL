@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{css/Pembobotan/pembobotan.css}">
+    <script th:src="@{js/Pembobotan/pembobotan.js}" defer></script>
+    <title>Portal TA</title>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Portal TA</h1>
+    </div>
+    <button class="back-button" onclick="window.location.href='/koordinator/home';">Back</button>
+    <div class="content">
+        <h1 class="page-header">Pembobotan</h1>
+
+        <!-- Section Bobot Koordinator -->
+        <div id="bobot-koordinator" class="bobot-dosen">
+            <div class="title-bobot">Bobot Koordinator</div>
+            <div class="value-bobot">
+                <input type="number" class="bobot-value" max="99" placeholder=" -" />
+                <span class="persen">%</span>
+            </div>
+            <div class="component-grid">
+                <div class="components">
+                    <label for="component-container-koordinator">Komponen Nilai</label>
+                    <div id="component-container-koordinator">
+                        <div th:each="bobot : ${komponenKoordinator}">
+                            <div class="component">
+                                <div class="comp-title" th:text="${bobot.komponen}"></div>
+                                <div class="comp-bobot" th:text="${bobot.persentase + ' %'}"></div>
+                                <button class="comp-delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="add-button" onclick="openPopup(1)">Add New</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Bobot Pembimbing -->
+        <div id="bobot-pembimbing" class="bobot-dosen">
+            <div class="title-bobot">Bobot Pembimbing</div>
+            <div class="value-bobot">
+                <input type="number" class="bobot-value" max="99" placeholder=" -" />
+                <span class="persen">%</span>
+            </div>
+            <div class="component-grid">
+                <div class="components">
+                    <label for="component-container-pembimbing">Komponen Nilai</label>
+                    <div id="component-container-pembimbing">
+                        <div th:each="bobot : ${komponenPembimbing}">
+                            <div class="component">
+                                <div class="comp-title" th:text="${bobot.komponen}"></div>
+                                <div class="comp-bobot" th:text="${bobot.persentase + ' %'}"></div>
+                                <button class="comp-delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="add-button" onclick="openPopup(3)">Add New</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Bobot Penguji -->
+        <div id="bobot-penguji" class="bobot-dosen">
+            <div class="title-bobot">Bobot Penguji</div>
+            <div class="value-bobot">
+                <input type="number" class="bobot-value" max="99" placeholder=" -" />
+                <span class="persen">%</span>
+            </div>
+            <div class="component-grid">
+                <div class="components">
+                    <label for="component-container-penguji">Komponen Nilai</label>
+                    <div id="component-container-penguji">
+                        <div th:each="bobot : ${komponenPenguji}">
+                            <div class="component">
+                                <div class="comp-title" th:text="${bobot.komponen}"></div>
+                                <div class="comp-bobot" th:text="${bobot.persentase + ' %'}"></div>
+                                <button class="comp-delete">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="add-button" onclick="openPopup(2)">Add New</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup for Adding Component -->
+    <div id="popup-overlay" style="display: none;"></div>
+    <div id="popup" style="display: none;">
+        <h3>Add New Component</h3>
+        <div class="text-input">
+            <input type="text" id="new-title" placeholder="Title" />
+            <input type="number" id="new-percentage" placeholder="Percentage" />
+        </div>
+        <form id="popup-form" action="#" method="post">
+            <input type="hidden" id="role-id" name="addKomponen" value="" />
+            <input type="hidden" id="komponen" name="komponen" value="" />
+            <input type="hidden" id="persentase" name="persentase" value="" />
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Script -->
+    <script>
+        // Fungsi untuk membuka popup dan mengatur roleId
+        function openPopup(roleId) {
+            // Set nilai role-id
+            document.getElementById("role-id").value = roleId;
+
+            // Tampilkan popup
+            document.getElementById("popup-overlay").style.display = "block";
+            document.getElementById("popup").style.display = "block";
+        }
+
+        // Menutup popup
+        document.getElementById("popup-overlay").onclick = function () {
+            document.getElementById("popup-overlay").style.display = "none";
+            document.getElementById("popup").style.display = "none";
+        };
+
+        // Menangani pengiriman form
+        document.querySelector("#popup-form").onsubmit = function (event) {
+            var komponen = document.getElementById("new-title").value;
+            var persentase = document.getElementById("new-percentage").value;
+
+            // Validasi input
+            if (!komponen || !persentase) {
+                alert("Mohon isi semua field.");
+                event.preventDefault();
+                return;
+            }
+
+            // Set action form berdasarkan roleId
+            var roleId = document.getElementById("role-id").value;
+            if (roleId == "1") {
+                document.getElementById("popup-form").action = "/pembobotan/add-komponen-koordinator";
+            } else if (roleId == "2") {
+                document.getElementById("popup-form").action = "/pembobotan/add-komponen-penguji";
+            } else if (roleId == "3") {
+                document.getElementById("popup-form").action = "/pembobotan/add-komponen-pembimbing";
+            }
+        };
+    </script>
+</body>
+</html>
