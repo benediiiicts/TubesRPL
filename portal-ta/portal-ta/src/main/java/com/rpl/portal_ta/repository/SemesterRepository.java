@@ -16,7 +16,7 @@ public class SemesterRepository {
     JdbcTemplate jdbcTemplate;
 
     public Semester getSemester(){
-        String sql = "SELECT * FROM Semester ORDER BY semester_id DESC LIMIT 1";
+        String sql = "SELECT * FROM Semester ORDER BY semester_id LIMIT 1";
         List<Semester> hasilQuerySemester = jdbcTemplate.query(sql, this::mapRowToSemester);
         return hasilQuerySemester.get(0);
     }

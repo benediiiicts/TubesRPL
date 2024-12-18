@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tugas Akhir - Dosen</title>
     <link rel="stylesheet" th:href="@{/css/home.css}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="navbar">
@@ -15,37 +14,36 @@
             <a href="/dosen/home/tugas-akhir">Tugas Akhir</a>
         </div>
         <button class="logout-button" onclick="window.location.href='/logout';">Log out</button>
-        <!-- <div class="profile">J</div> -->
     </div>
 
-    
     <div id="bodycontainer">
         <div id="subjudul"> Tugas Akhir Overview</div>
         <div class="utilitycontainer">
-            <form method="get" action="/filter-ta" id="filterForm">    
+            <form method="get" action="/filter-ta" id="filterForm">
                 <select id="sort" name="sort" onchange="this.form.submit()">
                     <option value="">Select Semester</option>
-                    <option th:each="semester : ${semesters}" 
-                            th:value="${semester.semesterId}" 
-                            th:text="${semester.tahunAjaran} + ' ' + ${semester.periode}"></option>
+                    <th:block th:each="semester : ${semesters}">
+                        <option th:value="${semester.semesterId}" 
+                                th:text="${semester.tahunAjaran} + ' ' + ${semester.periode}"></option>
+                    </th:block>
                 </select>
             </form>
-    </div>
-    <div id="sidang-container">
-        <div class="Sidangboxcontainer" th:each="sidangTA : ${listSidangTA}">
-            <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
-                <div class="Sidangbox">
-                    <div class="SidangboxPicture"></div>
-                    <div class="SidangboxDescription">
-                        <div class = "subjudulcontainer">
-                            <p class="judulSidang" th:text="${sidangTA.ta.topic}"></p>
-                            <p class="deskripsiSidang" th:text="${sidangTA.mahasiswa.nama}"></p>
+        </div>
+        <div id="sidang-container">
+            <div class="Sidangboxcontainer" th:each="sidangTA : ${listSidangTA}">
+                <a th:href="@{/ta-page/{id}(id=${sidangTA.ta.taId})}" class="Sidangboxlink">
+                    <div class="Sidangbox">
+                        <div class="SidangboxPicture"></div>
+                        <div class="SidangboxDescription">
+                            <div class="subjudulcontainer">
+                                <p class="judulSidang" th:text="${sidangTA.ta.topic}"></p>
+                                <p class="deskripsiSidang" th:text="${sidangTA.mahasiswa.nama}"></p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a> 
+                </a>
+            </div>
         </div>
     </div>
-
 </body>
 </html>

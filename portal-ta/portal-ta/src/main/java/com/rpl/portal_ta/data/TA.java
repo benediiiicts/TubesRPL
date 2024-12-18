@@ -31,5 +31,5 @@ public class TA{
     private String topic;
 
     @NotNull 
-    private int jenisTA;
+    private int tipe;
 }
