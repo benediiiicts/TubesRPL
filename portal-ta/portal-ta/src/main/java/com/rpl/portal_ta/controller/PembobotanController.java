@@ -43,7 +43,7 @@ public class PembobotanController {
         model.addAttribute("komponenPembimbing", komponenPembimbing);
         model.addAttribute("komponenKoordinator", komponenKoordinator);
 
-        return "bobotTest"; // Nama file template Thymeleaf
+        return "pembobotan/pembobotan"; // Nama file template Thymeleaf
     }
 
 
