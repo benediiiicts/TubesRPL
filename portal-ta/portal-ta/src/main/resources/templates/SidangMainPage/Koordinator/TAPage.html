@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="C:\Data\Kuliah\Tugas\Sems5\RPL\tubes\TubesRPL\portal-ta\portal-ta\src\main\resources\static\css\SidangMainPage\Koordinator\TAPage.css">
+    <link rel="stylesheet" th:href="@{/css/SidangMainPage/Koordinator/TAPage.css}">
     <title>Portal TA</title>
 
 </head>
@@ -15,10 +15,10 @@
     </div>
 
     <div class="container">
-        <button class="back-button" onclick="window.location.href='../../MainPage/Koordinator/home.html';">back</button>
+        <button class="back-button" onclick="window.history.back();">back</button>
         <div class="header">
-            <h2>JUDUL TA DISINI</h2>
-            <p>TA 1</p>
+            <h1 th:text="${ta.topic}"></h1>
+            <h3>TA <span th:text="${ta.tipe}"></span></h3>
         </div>
         <div class="details">
             <p><strong>Tanggal/waktu :</strong> <span>monday, 26 Agustus 2024 18:00</span></p>
@@ -64,7 +64,7 @@
                 <div id="boxtotalnilai">value...</div>
             </div>
         </div>
-        <a href="../../BAPPage/Koordinator/BAP.html">
+        <a href="/BAP">
             <button class="done-button">Done</button>
         </a>
     </div>

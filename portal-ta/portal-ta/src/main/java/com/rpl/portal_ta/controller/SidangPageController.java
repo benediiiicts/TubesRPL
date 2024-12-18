@@ -11,10 +11,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.rpl.portal_ta.data.BobotLengkap;
 import com.rpl.portal_ta.data.Dosen;
 import com.rpl.portal_ta.data.Mahasiswa;
 import com.rpl.portal_ta.data.Sidang;
 import com.rpl.portal_ta.data.TA;
+import com.rpl.portal_ta.service.BobotService;
 import com.rpl.portal_ta.service.DosenService;
 import com.rpl.portal_ta.service.MahasiswaService;
 import com.rpl.portal_ta.service.SidangService;
@@ -36,6 +38,9 @@ public class SidangPageController {
     
     @Autowired
     private TAService taService;
+
+    @Autowired
+    private BobotService bobotService;
 
     @GetMapping("/sidang/{id}")
     public String getSidangDetails(@PathVariable("id") int id, Model model, HttpSession session) {
@@ -69,8 +74,8 @@ public class SidangPageController {
         model.addAttribute("pembimbing2", pembimbing2);
         model.addAttribute("penguji1", penguji1);
         model.addAttribute("penguji2", penguji2);
-        // if(LocalDate.now().isBefore(sidang.getTanggal().toLocalDate())
-        //     && LocalTime.now().isBefore(sidang.getWaktu().toLocalTime())){
+        if(LocalDate.now().isBefore(sidang.getTanggal().toLocalDate())
+            && LocalTime.now().isBefore(sidang.getWaktu().toLocalTime())){
             if(session.getAttribute("role").equals("koordinator"))
                 return "/SidangMainPage_sebelumSidang/Koordinator/TApageOverview";
             else if(session.getAttribute("role").equals("dosen"))
@@ -79,16 +84,24 @@ public class SidangPageController {
                 return "/SidangMainPage_sebelumSidang/Mahasiswa/TApageOverview";
             else
                 return "/";
-        // }
-        // else{
-        //     if(session.getAttribute("role").equals("koordinator"))
-        //         return "/SidangMainPage/Koordinator/TApageOverview";
-        //     else if(session.getAttribute("role").equals("dosen"))
-        //         return "/SidangMainPage/Dosen/TApageOverview";
-        //     else if(session.getAttribute("role").equals("mahasiswa"))
-        //         return "/SidangMainPage/Mahasiswa/TApageOverview";
-        //     else
-        //         return "/";
-        // }
+        }
+        else{
+            if(session.getAttribute("role").equals("koordinator"))
+                return "/SidangMainPage/Koordinator/TAPage";
+            else if(session.getAttribute("role").equals("dosen"))
+                if(session.getAttribute("nama").equals(penguji1.getNama())
+                || session.getAttribute("nama").equals(penguji2.getNama()))
+                    return "/SidangMainPage/Penguji/TAPage";
+                else
+                    return "/SidangMainPage/Pembimbing/TAPage";
+            else if(session.getAttribute("role").equals("mahasiswa"))
+                return "#";
+            else
+                return "/";
+        }
+    }
+
+    private BobotLengkap gBobotLengkap(String topic){
+        return null;
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import com.rpl.portal_ta.data.Bobot;
+import com.rpl.portal_ta.data.BobotLengkap;
 
 @Repository
 public class BobotRepository {
@@ -31,5 +32,10 @@ public class BobotRepository {
         bobot.setKomponen(rs.getString("komponen"));
         bobot.setPersentase(rs.getInt("persentase"));
         return bobot;
+    }
+
+    public BobotLengkap getNilai(String topic){
+
+        return null;
     }
 }
