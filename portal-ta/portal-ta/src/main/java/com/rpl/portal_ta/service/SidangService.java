@@ -37,4 +37,7 @@ public class SidangService {
         List<TA> ta = taService.getCurrTA(session);
         return ta;
     }
+    public Sidang getSidang(int id_sidang){
+        return sidangRepository.getOneSidang(id_sidang);
+    }
 }
