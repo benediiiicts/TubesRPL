@@ -11,7 +11,6 @@
     <div class="navbar">
         <h1>Portal TA</h1>
         <div class="nav-links">
-            <a href="../../MainPage/Mahasiswa/homever2.html">Overview</a>
         </div>
         <button class="logout-button" onclick="window.location.href='/logout';">Log out</button>
         <!-- <div class="profile">J</div> -->
@@ -37,20 +36,20 @@
                 </select>
             </div>
             <div id="sidang-container">
-                <div class="Sidangboxcontainer" th:each="ta : ${tugasAkhir}">
-                    <a href="../../TAMainPage_sebelumTA/Mahasiswa/TApageOverview.html" class="Sidangboxlink">
-                        <div class="Sidangbox">
-                            <div class="SidangboxPicture"></div>
-                            <div class="SidangboxDescription">
-                                <div class = "subjudulcontainer">
-                                    <p class="judulSidang" th:text="${ta.topic}"></p>
-                                    <p class="deskripsiSidang" th:text="${ta.npm}"></p>
-                                </div>
-                            </div>
+        <div class="Sidangboxcontainer" th:each="sidangTA : ${listSidangTA}">
+            <a th:href="@{/ta-page/{id}(id=${sidangTA.ta.taId})}" class="Sidangboxlink">
+                <div class="Sidangbox">
+                    <div class="SidangboxPicture"></div>
+                    <div class="SidangboxDescription">
+                        <div class="subjudulcontainer">
+                            <p class="judulSidang" th:text="${sidangTA.ta.topic}"></p>
+                            <p class="deskripsiSidang" th:text="${sidangTA.mahasiswa.nama}"></p>
                         </div>
-                    </a> 
+                    </div>
                 </div>
-            </div>
+            </a>
+        </div>
+    </div>
         </div>
     </div>
 
